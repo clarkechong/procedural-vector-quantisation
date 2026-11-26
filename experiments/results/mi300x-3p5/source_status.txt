@@ -1,0 +1,9 @@
+ M experiments/encoding/synthesized.py
+ M experiments/evaluation/generator_model.py
+ M experiments/evaluation/plot_model_quality.py
+ M experiments/evaluation/seedlm_model.py
+ M tests/test_synthesis.py
+?? experiments/encoding/gpu_generator.py
+?? experiments/evaluation/reference_3p5.py
+?? experiments/results/mi300x-3p5/
+?? tests/test_gpu_generator.py

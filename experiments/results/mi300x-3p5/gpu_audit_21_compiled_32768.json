@@ -1,0 +1,222 @@
+{
+  "torch": "2.9.1+rocm6.4",
+  "hip": "6.4.43484-123eb5128",
+  "device": "AMD Radeon Graphics",
+  "setup_seconds": 0.6330836110000746,
+  "jit_seconds": 2.222261880000133,
+  "kernel_seconds": 6.4535462310000185,
+  "transfer_seconds": 0.0010379409995948663,
+  "peak_gpu_allocated_bytes": 35705978880,
+  "samples": [
+    {
+      "layer": 0,
+      "projection": "gate_proj",
+      "seed": 6288499,
+      "exponent": -8,
+      "sse": 0.008264482021331787,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 0,
+      "projection": "up_proj",
+      "seed": 13692778,
+      "exponent": -8,
+      "sse": 0.008846622193232179,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 0,
+      "projection": "down_proj",
+      "seed": 3673562,
+      "exponent": -8,
+      "sse": 0.010567963123321533,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 0,
+      "projection": "q_proj",
+      "seed": 556585,
+      "exponent": -8,
+      "sse": 0.011294379830360413,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 0,
+      "projection": "k_proj",
+      "seed": 13623759,
+      "exponent": -8,
+      "sse": 0.015222118236124516,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 0,
+      "projection": "v_proj",
+      "seed": 11693079,
+      "exponent": -8,
+      "sse": 0.0013811076059937477,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 0,
+      "projection": "o_proj",
+      "seed": 7782090,
+      "exponent": -8,
+      "sse": 0.0012870470527559519,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 15,
+      "projection": "gate_proj",
+      "seed": 9342666,
+      "exponent": -7,
+      "sse": 0.006948709487915039,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 15,
+      "projection": "up_proj",
+      "seed": 2877979,
+      "exponent": -8,
+      "sse": 0.003426074981689453,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 15,
+      "projection": "down_proj",
+      "seed": 14551512,
+      "exponent": -8,
+      "sse": 0.006577003747224808,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 15,
+      "projection": "q_proj",
+      "seed": 115005,
+      "exponent": -8,
+      "sse": 0.011821329593658447,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 15,
+      "projection": "k_proj",
+      "seed": 12123974,
+      "exponent": -8,
+      "sse": 0.004299387568607926,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 15,
+      "projection": "v_proj",
+      "seed": 13305432,
+      "exponent": -8,
+      "sse": 0.010293278843164444,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 15,
+      "projection": "o_proj",
+      "seed": 9297645,
+      "exponent": -8,
+      "sse": 0.006680548191070557,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 29,
+      "projection": "gate_proj",
+      "seed": 13182513,
+      "exponent": -8,
+      "sse": 0.00670378003269434,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 29,
+      "projection": "up_proj",
+      "seed": 4713252,
+      "exponent": -8,
+      "sse": 0.005505800247192383,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 29,
+      "projection": "down_proj",
+      "seed": 2562806,
+      "exponent": -8,
+      "sse": 0.011282682418823242,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 29,
+      "projection": "q_proj",
+      "seed": 5419315,
+      "exponent": -8,
+      "sse": 0.012237846851348877,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 29,
+      "projection": "k_proj",
+      "seed": 11847609,
+      "exponent": -8,
+      "sse": 0.0064336927607655525,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 29,
+      "projection": "v_proj",
+      "seed": 13424838,
+      "exponent": -8,
+      "sse": 0.006223917007446289,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    },
+    {
+      "layer": 29,
+      "projection": "o_proj",
+      "seed": 4920131,
+      "exponent": -8,
+      "sse": 0.0046353526413440704,
+      "fields_match": true,
+      "decoded_match": true,
+      "sse_difference": 0.0
+    }
+  ]
+}

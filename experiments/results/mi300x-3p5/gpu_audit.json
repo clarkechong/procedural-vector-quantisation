@@ -1,0 +1,47 @@
+{
+  "torch": "2.9.1+rocm6.4",
+  "hip": "6.4.43484-123eb5128",
+  "device": "AMD Radeon Graphics",
+  "setup_seconds": 0.7240370660001645,
+  "kernel_seconds": 0.4894968629998857,
+  "transfer_seconds": 0.00042328600011387607,
+  "peak_gpu_allocated_bytes": 2281701376,
+  "samples": [
+    {
+      "layer": 0,
+      "projection": "q_proj",
+      "seed": 9312302,
+      "exponent": -6,
+      "sse": 0.0674893856048584,
+      "reference_seed": 9312302,
+      "reference_exponent": -6,
+      "reference_sse": 0.0674893856048584,
+      "fields_match": true,
+      "decoded_match": true
+    },
+    {
+      "layer": 15,
+      "projection": "up_proj",
+      "seed": 14956364,
+      "exponent": -8,
+      "sse": 0.013755083084106445,
+      "reference_seed": 14956364,
+      "reference_exponent": -8,
+      "reference_sse": 0.013755083084106445,
+      "fields_match": true,
+      "decoded_match": true
+    },
+    {
+      "layer": 29,
+      "projection": "down_proj",
+      "seed": 9977808,
+      "exponent": -8,
+      "sse": 0.01344926655292511,
+      "reference_seed": 9977808,
+      "reference_exponent": -8,
+      "reference_sse": 0.01344926655292511,
+      "fields_match": true,
+      "decoded_match": true
+    }
+  ]
+}

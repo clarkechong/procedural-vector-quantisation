@@ -1,0 +1,53 @@
+# Frozen generator at 3.5 projection bits per weight
+
+Status, 26 November 2026: **complete**. All 210 projection matrices were encoded and the full WikiText-2 evaluation scored 304,680 targets. The measured 3.5-bpw payload is 46,448,640 bytes, full projection weight NMSE is **0.03903028**, and perplexity is **108.88148**. The payload manifest, metrics, activation errors, timing and plots are saved in this directory. The plot command initially failed on a relative-path error; after fixing that path, plots were generated from the completed metrics and validated.
+
+The starting commit is `aca2e14`. The handoff's `c230372` was an earlier amended commit; the user confirmed that `aca2e14` is the intended starting state. The code changes are presently uncommitted.
+
+## Environment and inputs
+
+AMD Instinct MI300X VF, gfx942, approximately 196 GB reported device memory. Python 3.12.3; PyTorch 2.9.1+rocm6.4 with HIP 6.4.43484 and ROCm Triton 3.5.1; NumPy 2.5.5, SciPy 1.18.1, Matplotlib 3.11.2, Safetensors 0.8.0, Transformers 5.24.1, Accelerate 1.16.0, PyArrow 26.0.1 and Tokenizers 0.23.3. The PyTorch version differs from `uv.lock`'s 2.15.0: cached ROCm builds were linked into `.venv`, and `uv sync` must not replace them with CPU or NVIDIA builds. GPU commands must run outside this workspace sandbox to expose `/dev/kfd` and `/dev/dri/render*`.
+
+Input SHA-256:
+
+| File | SHA-256 |
+| --- | --- |
+| `data/smollm2-135m.safetensors` | `80521b40281d6ce74e35c9282c22539e75aa0ac8578892b2a59955ef78d55da1` |
+| `data/smollm2/config.json` | `5ede75f619ec546ef29867b3fe62cfec35c039f26c4994ff7e453153e65a544e` |
+| `data/smollm2/tokenizer.json` | `9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c` |
+| `data/smollm2/test-00000-of-00001.parquet` | `5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91` |
+| `data/smollm2/validation-00000-of-00001.parquet` | `204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c` |
+
+## Correctness and baseline
+
+All 21 unit tests pass with the ROCm device exposed. `cpu_reference_21.csv` searches all 2^20 and 2^24 seeds for one real block in each of the seven projections at layers 0, 15 and 29. The 24-bit SSE never exceeds the 20-bit SSE. Both the eager audit in `gpu_audit_21.json` and the selected compiled 32,768-target audit in `gpu_audit_21_compiled_32768.json` report **21/21 matching seeds and exponents**, **21/21 matching scalar decoded vectors**, and zero SSE difference against the streamed FP64 CPU reference. The smaller three-block audit is also retained. These samples check the implementation but do not prove tie equivalence for every model block.
+
+The full original baseline in `original/perplexity.csv` scored 304,680 targets at **17.49515016** perplexity. Its 304,978 input tokens, 1,024-token contexts, FP32 dtype, batch one and 512 calibration tokens match the handoff. `original-smoke/perplexity.csv` scored 1,023 targets at 10.7917238 perplexity. The 3-bpw synthesized result recorded NMSE **0.06704776** and perplexity **1302.79439** under the same evaluation protocol. The 3.5-bpw result reduces NMSE by about 41.8% and perplexity by about 91.6% relative to that 3-bpw run.
+
+## Measured encoder speed
+
+`gpu_benchmark.csv` contains the initial synchronized eager PyTorch timings. At 65,536 seeds and 1,024 targets per tile, steady-state encoding reached **752 blocks/s**, projecting **4.90 hours**. `torch_profile.txt` showed the matrix product using only about 0.19 ms of a representative tile's 6.43 ms GPU time; separate FP64 scale and scoring operations dominated. ROCm reported 100% GPU busy time, which is not evidence of peak arithmetic efficiency.
+
+`gpu_benchmark_compiled.csv` measures a compiled scorer and larger target tiles. The selected 65,536-seed by 32,768-target policy reached **4,965 blocks/s** and **83.3 billion block-seed pairs/s** on 32,768 sampled real blocks, an isolated full-model arithmetic projection of **0.74 hours**. Measured peak GPU allocation was about 35.7 GB, codebook setup about 0.63 s and JIT setup about 5.17 s. Across 210 matrices, 540 padded target tiles contain 17,694,720 processed blocks for 13,271,040 real blocks. At about 6.6 s per tile, search alone projected 59 minutes; the measured full-model encoding took **3588.19 s** (59.80 minutes) and evaluation took **27.29 s**. The selected compiled scorer performed the complete 24-bit search with FP64 scores. The timing JSON records 3581.27 s of GPU kernel time and 35.79 GB peak allocated GPU memory.
+
+The three-block streamed 24-bit CPU reference took 0.68, 0.76 and 0.63 s per block. The 20-bit KD-tree index matched its corresponding streamed reference fields and decoded vectors on those blocks. No full-domain CPU/GPU speedup is claimed from mismatched batch sizes.
+
+Reproduce the extended CPU reference with:
+
+```sh
+OPENBLAS_NUM_THREADS=1 .venv/bin/python -m experiments.evaluation.reference_3p5 \
+  --checkpoint data/smollm2-135m.safetensors \
+  --winners experiments/results/generator-search-smollm2/winners.json \
+  --out experiments/results/mi300x-3p5/cpu_reference_21.csv --extended
+```
+
+## Reproduction and resume
+
+The exact full-run command and postprocessing are in `run.sh`. It uses `--encoder-backend rocm --score-backend compiled --seed-tile 65536 --target-tile 32768`, exhaustive FP64 scoring, all 2^24 seeds, a signed exponent nibble, FP32 model inference and the fixed WikiText-2 protocol. Run it from a GPU-accessible session outside the workspace sandbox. The detached job used this policy; old eager-policy chunks remain separately cached and cannot be mixed with compiled-policy chunks. The job was started with:
+
+```sh
+tmux new-session -d -s pvq_3p5 \
+  'bash experiments/results/mi300x-3p5/run.sh > runs/mi300x/synthesized_3p5.log 2>&1'
+```
+
+The runner writes `synthesized_3p5_payloads.csv` with a SHA-256 and byte count for each matrix, checks the expected 46,448,640-byte total, then saves full NMSE, activation errors, NLL, perplexity, encoder timing and updated plots. The final output was checked for 210 unique matrix records, total packed size, full scored-token count, a 14-row plot data table containing the MI300X result, and four plot files.

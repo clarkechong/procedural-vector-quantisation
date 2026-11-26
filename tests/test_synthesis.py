@@ -63,6 +63,26 @@ class SynthesisTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             synthesized.pack([1 << 20], [0], 20)
 
+    def test_twenty_four_bit_fields_cross_byte_boundaries(self):
+        program = (bitvector.Instruction("SHR", ("s", "i")),)
+        seeds = np.array([0, (1 << 20) + 7, (1 << 24) - 1], dtype=np.uint32)
+        exponents = np.array([-8, 7, -1], dtype=np.int8)
+        payload = synthesized.pack(seeds, exponents, 24)
+        self.assertEqual(11, len(payload))
+        stream = int.from_bytes(payload, "little")
+        for row, (seed, exponent) in enumerate(zip(seeds, exponents)):
+            self.assertEqual((stream >> (28 * row)) & ((1 << 28) - 1),
+                             int(seed) | ((int(exponent) & 15) << 24))
+        expected = np.ldexp(bitvector.evaluate(program, seeds[:, None], np.arange(8)),
+                            exponents[:, None])
+        np.testing.assert_array_equal(synthesized.decode(program, payload, 24, 8, count=3), expected)
+        with self.assertRaises(ValueError):
+            synthesized.decode(program, payload[:-1] + bytes([payload[-1] | 0x10]), 24, 8, count=3)
+        with self.assertRaises(ValueError):
+            synthesized.pack([1 << 24], [0], 24)
+        with self.assertRaises(ValueError):
+            synthesized.pack([-1], [0], 24)
+
     def test_fingerprint_matches_are_verified(self):
         first = (bitvector.Instruction("SHL", ("s", "i")),)
         equivalent = (bitvector.Instruction("ROTL", ("s", "i")),)
@@ -98,6 +118,16 @@ class SynthesisTests(unittest.TestCase):
         blocks = np.array([[12.0], [12.0001], [-2.0]])
         _, _, exponents, _ = synthesized.exact_search(vectors, blocks)
         np.testing.assert_array_equal(exponents, [0, 1, -8])
+
+    def test_streamed_program_reference_matches_materialized_search(self):
+        program = (bitvector.Instruction("MUL", ("s", 0x9E3779B9)),
+                   bitvector.Instruction("SHR", ("r0", "i")),
+                   bitvector.Instruction("SHR", ("r1", "r1")))
+        blocks = np.vstack((np.zeros((1, 8)), np.random.default_rng(11).normal(size=(6, 8))))
+        expected = synthesized.exact_search(bitvector.codebook(program, 10, 8), blocks)
+        actual = synthesized.exact_program_search(program, blocks, 10, seed_batch=71)
+        for left, right in zip(expected, actual):
+            np.testing.assert_array_equal(left, right)
 
 
 if __name__ == "__main__":

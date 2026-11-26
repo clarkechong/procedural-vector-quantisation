@@ -14,31 +14,37 @@ ROOT = Path(__file__).resolve().parents[2]
 COLORS = {"Synthesized": "#3567BC", "SeedLM": "#208978", "Scalar": "#BD731D", "Original": "#303844"}
 
 
-def measurements(laptop):
+def measurements(laptop, mi300x=None):
     laptop = laptop.resolve()
+    if mi300x is not None:
+        mi300x = mi300x.resolve()
     rows = []
     labels = {
         "original": ("Original", "Original", "*"),
         "synthesized_2": ("Synthesized 2b", "Synthesized", "o"),
         "synthesized_2p5": ("Synthesized 2.5b", "Synthesized", "o"),
         "synthesized_3": ("Synthesized 3b", "Synthesized", "o"),
+        "synthesized_3p5": ("Synthesized 3.5b", "Synthesized", "o"),
         "seedlm_all_seeds_3": ("SeedLM all seeds 3b", "SeedLM", "^"),
         "seedlm_all_seeds_4": ("SeedLM all seeds 4b", "SeedLM", "^"),
         "seedlm_paper_3": ("SeedLM shortlist 3b", "SeedLM", "s"),
         "seedlm_paper_4": ("SeedLM shortlist 4b", "SeedLM", "s"),
     }
-    for method, (label, family, marker) in labels.items():
-        source = laptop / method / "perplexity.csv"
-        if not source.exists():
+    for directory, run_name in ((laptop, "Laptop CUDA"), (mi300x, "MI300X ROCm")):
+        if directory is None:
             continue
-        with source.open(newline="") as handle:
-            for row in csv.DictReader(handle):
-                if row["method"] != method or int(row["scored_tokens"]) != 304680:
-                    continue
-                rows.append(dict(method=method, label=label, family=family, marker=marker,
-                                 bits_per_weight=float(row["projection_bpw"]),
-                                 weight_nmse=float(row["weight_nmse"]), perplexity=float(row["perplexity"]),
-                                 run="Laptop CUDA", source=str(source.relative_to(ROOT))))
+        for method, (label, family, marker) in labels.items():
+            source = directory / method / "perplexity.csv"
+            if not source.exists():
+                continue
+            with source.open(newline="") as handle:
+                for row in csv.DictReader(handle):
+                    if row["method"] != method or int(row["scored_tokens"]) != 304680:
+                        continue
+                    rows.append(dict(method=method, label=label, family=family, marker=marker,
+                                     bits_per_weight=float(row["projection_bpw"]),
+                                     weight_nmse=float(row["weight_nmse"]), perplexity=float(row["perplexity"]),
+                                     run=run_name, source=str(source.relative_to(ROOT))))
     source = ROOT / "experiments/results/codebooks-smollm2/model_quality.csv"
     historical = {
         "int4_group64": ("Group-64 INT4 4.25b", "Scalar", "D"),
@@ -116,7 +122,7 @@ def plot(rows, out):
     handles.append(Line2D([], [], marker="o", linestyle="none", markerfacecolor="white",
                           markeredgecolor="#56606E", label="Hollow: earlier CPU run", markersize=6))
     fig.legend(handles=handles, loc="lower left", bbox_to_anchor=(.07, .105), ncol=4, frameon=False)
-    fig.text(.075, .075, "Dashed line joins the same frozen synthesized program at 3, 2.5 and 2 bpw; it is not a fitted law.",
+    fig.text(.075, .075, "Dashed line joins measured points for the same frozen synthesized program; it is not a fitted law.",
              fontsize=9, color="#56606E")
     fig.text(.075, .045, "All runs compress the same 210 projections. Different methods and hardware are pooled; NMSE alone does not determine perplexity.",
              fontsize=9, color="#56606E")
@@ -124,14 +130,33 @@ def plot(rows, out):
     fig.savefig(out / "nmse_perplexity.svg", facecolor="white")
     plt.close(fig)
 
+    fig, ax = plt.subplots(figsize=(8, 5))
+    for row in rows:
+        if row["family"] == "Original":
+            continue
+        color = COLORS[row["family"]]
+        ax.scatter(row["bits_per_weight"], row["weight_nmse"], color=color, marker=row["marker"])
+        if row["method"] == "synthesized_3p5":
+            ax.annotate("Synthesized 3.5b (measured)",
+                        (row["bits_per_weight"], row["weight_nmse"]), xytext=(8, 8),
+                        textcoords="offset points")
+    ax.set(xlabel="Projection bits per weight", ylabel="Full projection weight NMSE",
+           title="Measured SmolLM2-135M compression results")
+    ax.grid(alpha=.2)
+    fig.tight_layout()
+    fig.savefig(out / "bitrate_nmse.png", dpi=180, facecolor="white")
+    fig.savefig(out / "bitrate_nmse.svg", facecolor="white")
+    plt.close(fig)
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--runs", type=Path, default=ROOT / "runs/laptop-rtx3050")
+    parser.add_argument("--mi300x", type=Path, default=ROOT / "experiments/results/mi300x-3p5")
     parser.add_argument("--out", type=Path, default=ROOT / "runs/laptop-rtx3050/plots")
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
-    rows = measurements(args.runs)
+    rows = measurements(args.runs, args.mi300x)
     with (args.out / "nmse_perplexity.csv").open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
         writer.writeheader()

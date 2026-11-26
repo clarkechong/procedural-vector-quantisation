@@ -1,0 +1,15 @@
+method,label,family,marker,bits_per_weight,weight_nmse,perplexity,run,source
+original,Original,Original,*,16.0,0.0,17.495150975980653,Laptop CUDA,experiments/results/laptop-rtx3050/original/perplexity.csv
+original,Original,Original,*,16.0,0.0,17.49515016288473,MI300X ROCm,experiments/results/mi300x-3p5/original/perplexity.csv
+int4_group64,Group-64 INT4 4.25b,Scalar,D,4.25,0.012719376639454119,25.034744957125913,Earlier CPU,experiments/results/codebooks-smollm2/model_quality.csv
+indexed_refine,SeedLM indexed refinement 4b,SeedLM,D,4.0,0.02005235847925279,41.069933793889724,Earlier CPU,experiments/results/codebooks-smollm2/model_quality.csv
+seedlm_all_seeds_4,SeedLM all seeds 4b,SeedLM,^,4.0,0.03679048783898977,146.92482461504122,Laptop CUDA,experiments/results/laptop-rtx3050/seedlm_all_seeds_4/perplexity.csv
+synthesized_3p5,Synthesized 3.5b,Synthesized,o,3.5,0.039030284237814274,108.88148276499523,MI300X ROCm,experiments/results/mi300x-3p5/synthesized_3p5/perplexity.csv
+seedlm_paper_4,SeedLM shortlist 4b,SeedLM,s,4.0,0.04058672619495991,219.45014876663924,Laptop CUDA,experiments/results/laptop-rtx3050/seedlm_paper_4/perplexity.csv
+synthesized_3,Synthesized 3b,Synthesized,o,3.0,0.06704775956622061,1302.7943863107926,Laptop CUDA,experiments/results/laptop-rtx3050/synthesized_3/perplexity.csv
+refine,SeedLM fixed-255 refined 4b,SeedLM,v,4.0,0.08432233467640109,24477.249913413445,Earlier CPU,experiments/results/codebooks-smollm2/model_quality.csv
+seedlm_all_seeds_3,SeedLM all seeds 3b,SeedLM,^,3.0,0.0936587847198046,30749.524761218872,Laptop CUDA,experiments/results/laptop-rtx3050/seedlm_all_seeds_3/perplexity.csv
+seedlm_paper_3,SeedLM shortlist 3b,SeedLM,s,3.0,0.11029265067992156,218332.5577568517,Laptop CUDA,experiments/results/laptop-rtx3050/seedlm_paper_3/perplexity.csv
+synthesized_2p5,Synthesized 2.5b,Synthesized,o,2.5,0.11903140639069966,160426.40355960594,Laptop CUDA,experiments/results/laptop-rtx3050/synthesized_2p5/perplexity.csv
+paper,SeedLM fixed-255 paper 4b,SeedLM,v,4.0,0.14416039058776528,2998973.9128901046,Earlier CPU,experiments/results/codebooks-smollm2/model_quality.csv
+synthesized_2,Synthesized 2b,Synthesized,o,2.0,0.21636039676072188,3120230.994490535,Laptop CUDA,experiments/results/laptop-rtx3050/synthesized_2/perplexity.csv

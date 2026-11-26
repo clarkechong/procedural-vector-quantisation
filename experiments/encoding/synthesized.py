@@ -2,6 +2,7 @@
 
 import numpy as np
 
+from experiments.generator_algebra import bitvector
 from experiments.generator_algebra.bitvector import scalar_instruction
 
 
@@ -37,10 +38,46 @@ def exact_search(vectors, blocks, seed_batch=4096):
     return errors, best_seed, best_exponent, reconstructed
 
 
+def exact_program_search(program, blocks, seed_bits, seed_batch=4096):
+    """Memory-bounded float64 exhaustive reference over a generator's full seed domain."""
+    if not 1 <= seed_bits <= 24 or seed_batch < 1:
+        raise ValueError("Invalid seed domain or batch size")
+    blocks = np.asarray(blocks, dtype=np.float64)
+    if blocks.ndim != 2 or blocks.shape[1] != 8 or not len(blocks):
+        raise ValueError("Expected nonempty eight-weight blocks")
+    best_score = np.full(len(blocks), np.inf)
+    best_seed = np.zeros(len(blocks), dtype=np.uint32)
+    best_exponent = np.full(len(blocks), -8, dtype=np.int8)
+    columns = np.arange(len(blocks))
+    indices = np.arange(8, dtype=np.uint32)
+    for start in range(0, 1 << seed_bits, seed_batch):
+        stop = min(start + seed_batch, 1 << seed_bits)
+        current = bitvector.evaluate(program, np.arange(start, stop, dtype=np.uint32)[:, None],
+                                     indices).astype(np.float64)
+        norm = np.einsum("iv,iv->i", current, current)[:, None]
+        dot = current @ blocks.T
+        optimum = np.divide(dot, norm, out=np.zeros_like(dot), where=norm > 0)
+        fraction, power = np.frexp(optimum)
+        exponent = np.clip(power - 1 + (fraction > .75), -8, 7).astype(np.int8)
+        exponent[optimum <= 0] = -8
+        scale = np.ldexp(1.0, exponent)
+        score = scale * (scale * norm - 2 * dot)
+        row = score.argmin(axis=0)
+        selected = score[row, columns]
+        improve = selected < best_score
+        best_score[improve] = selected[improve]
+        best_seed[improve] = start + row[improve]
+        best_exponent[improve] = exponent[row, columns][improve]
+    reconstructed = np.ldexp(bitvector.evaluate(program, best_seed[:, None], indices).astype(np.float64),
+                             best_exponent[:, None])
+    errors = np.square(blocks - reconstructed).sum(axis=1)
+    return errors, best_seed, best_exponent, reconstructed
+
+
 def pack(seeds, exponents, seed_bits):
     """Pack consecutive little-endian fields with at most seven tail padding bits."""
-    if not 1 <= seed_bits <= 20:
-        raise ValueError("Seed field must be 1–20 bits")
+    if not 1 <= seed_bits <= 24:
+        raise ValueError("Seed field must be 1–24 bits")
     seeds, exponents = np.asarray(seeds), np.asarray(exponents)
     if (seeds.shape != exponents.shape or seeds.ndim != 1
             or not np.issubdtype(seeds.dtype, np.integer) or not np.issubdtype(exponents.dtype, np.integer)
@@ -54,7 +91,7 @@ def pack(seeds, exponents, seed_bits):
 
 def decode(program, payload, seed_bits, width, *, count=None):
     """Independent scalar packed decoder, with no dependency on NumPy execution."""
-    if not 1 <= seed_bits <= 20 or width < 1:
+    if not 1 <= seed_bits <= 24 or width < 1:
         raise ValueError("Invalid packed layout")
     bits = seed_bits + 4
     if count is None:

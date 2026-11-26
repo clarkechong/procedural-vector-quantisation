@@ -21,7 +21,7 @@ from experiments.manifests.weights import PROJECTIONS, Weights
 RESULTS = Path(__file__).resolve().parents[1] / "results"
 DEFAULT_WINNERS = RESULTS / "generator-search-smollm2" / "winners.json"
 
-METHODS = ("original", "synthesized_2", "synthesized_2p5", "synthesized_3", "seedlm_paper_3", "seedlm_paper_4",
+METHODS = ("original", "synthesized_2", "synthesized_2p5", "synthesized_3", "synthesized_3p5", "seedlm_paper_3", "seedlm_paper_4",
            "seedlm_all_seeds_3", "seedlm_all_seeds_4")
 
 
@@ -106,6 +106,10 @@ def main():
     parser.add_argument("--methods", nargs="+", choices=METHODS, default=METHODS[:3] + METHODS[-2:])
     parser.add_argument("--pool", type=int, default=1024)
     parser.add_argument("--threads", type=int, default=4)
+    parser.add_argument("--encoder-backend", choices=("cpu", "rocm"), default="cpu")
+    parser.add_argument("--seed-tile", type=int, default=16384)
+    parser.add_argument("--target-tile", type=int, default=256)
+    parser.add_argument("--score-backend", choices=("eager", "compiled"), default="eager")
     parser.add_argument("--context", type=int, default=1024)
     parser.add_argument("--tokens", type=int, default=0)
     parser.add_argument("--batch", type=int, default=2)
@@ -114,7 +118,8 @@ def main():
     add_evaluation_arguments(parser)
     args = parser.parse_args()
     if not (1 <= args.pool <= 65535 and args.threads > 0 and args.context >= 2 and args.batch > 0
-            and args.calibration_tokens >= 0 and args.tokens >= 0 and args.tokens != 1 and args.windows >= 0):
+            and args.calibration_tokens >= 0 and args.tokens >= 0 and args.tokens != 1 and args.windows >= 0
+            and args.seed_tile > 0 and args.target_tile > 0):
         parser.error("Invalid pool, thread, batch, context, or token count")
     if (args.audit or any(method.startswith("seedlm_") for method in args.methods)) and args.library is None:
         parser.error("Pass --library for SeedLM methods or --audit")
@@ -126,10 +131,19 @@ def main():
         return
     if args.data is None or "original" in args.methods[1:]:
         parser.error("Supply the evaluation data and place original first if requested")
+    if "synthesized_3p5" in args.methods and args.encoder_backend != "rocm":
+        parser.error("synthesized_3p5 requires --encoder-backend rocm")
+    def gpu_encoder(bits):
+        from experiments.encoding.gpu_generator import GPUEncoder
+        return GPUEncoder(program, bits, seed_tile=args.seed_tile, target_tile=args.target_tile,
+                          cache_dir=args.out / f"synthesized_{bits}_cache",
+                          score_backend=args.score_backend)
     factories = {
         "synthesized_2": lambda: DirectEncoder(program, 12, args.threads),
         "synthesized_2p5": lambda: DirectEncoder(program, 16, args.threads),
-        "synthesized_3": lambda: DirectEncoder(program, 20, args.threads),
+        "synthesized_3": (lambda: gpu_encoder(20)) if args.encoder_backend == "rocm"
+                           else (lambda: DirectEncoder(program, 20, args.threads)),
+        "synthesized_3p5": lambda: gpu_encoder(24),
         "seedlm_paper_3": lambda: PaperEncoder(PUBLISHED[0], args.pool, args.library, args.threads),
         "seedlm_paper_4": lambda: PaperEncoder(PUBLISHED[1], args.pool, args.library, args.threads),
         "seedlm_all_seeds_3": lambda: PaperEncoder(PUBLISHED[0], args.pool, args.library, args.threads,
@@ -142,7 +156,9 @@ def main():
                              native_library_sha256=digest(args.library) if args.library else None,
                              paper_indexed_seeds=args.pool, paper_exhaustive_seeds=65535,
                              seedlm_block_layout="contiguous row-major matrix with zero-padded tail",
-                             scipy=scipy.__version__))
+                             scipy=scipy.__version__, encoder_backend=args.encoder_backend,
+                             seed_tile=args.seed_tile, target_tile=args.target_tile,
+                             score_backend=args.score_backend))
 
 
 if __name__ == "__main__":

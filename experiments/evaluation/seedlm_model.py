@@ -182,6 +182,12 @@ def run(args, extra_encoders=None, extra_metadata=None):
             print(f"{method}: preparing model weights", flush=True)
             started = time.perf_counter()
             custom = extra_encoders[method]() if method in extra_encoders else None
+            payload_log = None
+            payload_writer = None
+            if custom is not None:
+                payload_log = (args.out / f"{method}_payloads.csv").open("w", newline="")
+                payload_writer = csv.writer(payload_log)
+                payload_writer.writerow(("layer", "projection", "rows", "columns", "payload_bytes", "sha256"))
             if method == "indexed_refine" and indexed is None:
                 indexed = IndexedShortlist(args.neighborhood, args.shortlist)
             encoder = indexed if method == "indexed_refine" else shortlist
@@ -205,6 +211,10 @@ def run(args, extra_encoders=None, extra_metadata=None):
                                                        requires_grad=False)
                     size += original.size
                     packed_bytes += len(payload)
+                    if payload_writer is not None:
+                        payload_writer.writerow((layer, name, *original.shape, len(payload),
+                                                 hashlib.sha256(payload).hexdigest()))
+                        payload_log.flush()
                     error = restored - original
                     weight_error = float(np.square(error, dtype=np.float64).sum())
                     weight_energy = float(np.square(original, dtype=np.float64).sum())
@@ -217,11 +227,32 @@ def run(args, extra_encoders=None, extra_metadata=None):
                         metrics.writerow((method, layer, name, weight_error / weight_energy,
                                           output_error / output_energy, weight_error, weight_energy,
                                           output_error, output_energy))
+                    if hasattr(custom, "kernel_seconds"):
+                        elapsed = time.perf_counter() - started
+                        print(f"{method}: encoded {size:,}/{projection_size:,} weights in {elapsed:.1f}s "
+                              f"({size / max(elapsed, 1e-9):,.1f} weights/s)", flush=True)
                     if name == "o_proj" and (layer + 1) % 10 == 0:
                         print(f"{method}: encoded {layer + 1}/{config.num_hidden_layers} layers",
                               flush=True)
                 details.flush()
+            if payload_log is not None:
+                payload_log.close()
+            if method == "synthesized_3p5" and (size != 106168320 or packed_bytes != 46448640):
+                raise AssertionError(f"Unexpected 3.5-bpw payload size: {size} weights, {packed_bytes} bytes")
             if custom is not None:
+                if hasattr(custom, "kernel_seconds"):
+                    timing = dict(setup_seconds=custom.setup_seconds,
+                                  jit_seconds=custom.jit_seconds,
+                                  transfer_seconds=custom.transfer_seconds,
+                                  kernel_seconds=custom.kernel_seconds,
+                                  blocks_encoded=custom.blocks_encoded,
+                                  seed_bits=custom.seed_bits,
+                                  seed_tile=custom.seed_tile,
+                                  target_tile=custom.target_tile,
+                                  score_backend=custom.score_backend,
+                                  peak_gpu_allocated_bytes=torch.cuda.max_memory_allocated())
+                    (args.out / f"{method}_encoder_timing.json").write_text(
+                        json.dumps(timing, indent=2) + "\n")
                 del custom
             encode_seconds = time.perf_counter() - started
             print(f"{method}: evaluation on {len(tokens):,} input tokens after {encode_seconds:.1f}s encoding",

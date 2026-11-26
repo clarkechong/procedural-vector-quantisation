@@ -1,0 +1,12 @@
+{
+  "setup_seconds": 0.44747718700000405,
+  "jit_seconds": 2.395144054999946,
+  "transfer_seconds": 0.6113655780086447,
+  "kernel_seconds": 3581.273969168002,
+  "blocks_encoded": 13271040,
+  "seed_bits": 24,
+  "seed_tile": 65536,
+  "target_tile": 32768,
+  "score_backend": "compiled",
+  "peak_gpu_allocated_bytes": 35785670656
+}

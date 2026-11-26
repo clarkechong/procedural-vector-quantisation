@@ -1,0 +1,11 @@
+python: 3.12.3
+torch: 2.9.1+rocm6.4
+numpy: 2.5.5
+scipy: 1.18.1
+transformers: 5.24.1
+accelerate: 1.16.0
+pyarrow: 26.0.1
+tokenizers: 0.23.3
+hip: 6.4.43484-123eb5128
+device: AMD Radeon Graphics
+properties: _CudaDeviceProperties(name='AMD Radeon Graphics', major=9, minor=4, gcnArchName='gfx942:sramecc+:xnack-', total_memory=196288MB, multi_processor_count=304, uuid=34323634-3764-3065-3936-666265666534, pci_bus_id=131, pci_device_id=0, pci_domain_id=0, L2_cache_size=4MB)
