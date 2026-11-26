@@ -1,0 +1,22 @@
+{
+  "generator": "3-9796",
+  "seed_bits": 20,
+  "exponent_bits": 4,
+  "block_weights": 8,
+  "payload_bpw": 3,
+  "blocks": 8,
+  "sample_rows": [
+    51499,
+    7970,
+    25442,
+    35197,
+    99315,
+    23710,
+    2558,
+    54924
+  ],
+  "indexed_matches_exhaustive": true,
+  "scalar_matches_indexed": true,
+  "sampled_nmse_2p5": 0.1391224237608137,
+  "sampled_nmse_3": 0.06035631069209237
+}

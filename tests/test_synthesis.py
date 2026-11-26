@@ -48,6 +48,21 @@ class SynthesisTests(unittest.TestCase):
         self.assertNotIn(bitvector.Instruction("ADD", ("i", "s")), options[0])
         self.assertFalse(grammar.live_instructions((p0, bitvector.Instruction("ADD", ("s", "i")))))
 
+    def test_twenty_bit_seed_payload_preserves_high_bits(self):
+        program = (bitvector.Instruction("SHR", ("s", "i")),)
+        seeds = np.array([0, 65536, (1 << 20) - 1], dtype=np.uint32)
+        exponents = np.array([-8, 0, 7])
+        payload = synthesized.pack(seeds, exponents, 20)
+        self.assertEqual(len(payload), 9)
+        for row, (seed, exponent) in enumerate(zip(seeds, exponents)):
+            word = int.from_bytes(payload[3 * row:3 * row + 3], "little")
+            self.assertEqual(word, int(seed) | ((int(exponent) & 15) << 20))
+        expected = np.ldexp(bitvector.evaluate(program, seeds[:, None], np.arange(8)),
+                            exponents[:, None])
+        np.testing.assert_array_equal(synthesized.decode(program, payload, 20, 8), expected)
+        with self.assertRaises(ValueError):
+            synthesized.pack([1 << 20], [0], 20)
+
     def test_fingerprint_matches_are_verified(self):
         first = (bitvector.Instruction("SHL", ("s", "i")),)
         equivalent = (bitvector.Instruction("ROTL", ("s", "i")),)

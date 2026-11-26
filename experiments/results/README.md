@@ -9,6 +9,7 @@ Each directory records the inputs and preserves the outputs for a single study. 
 | Computational codebooks | [Study report](#computational-codebook-follow-up) and [raw outputs](codebooks-smollm2/) |
 | Generator synthesis | [Search report](generator-search-smollm2/README.md) |
 | Generator perplexity | [Evaluation report and partial runs](generator-model-smollm2/README.md) |
+| Laptop model evaluation | [Completed synthesized and SeedLM runs, including 3-bpw synthesis](laptop-rtx3050/README.md) |
 
 The input is the original BF16 checkpoint. The main sweep covers seven projections at each of layers 0, 15 and 29, five tile sizes from 4×4 to 64×64, and full rows. It draws up to 32 tiles per matrix and scale and uses 19 shuffle draws per null. [Checkpoint and SHA-256](https://huggingface.co/HuggingFaceTB/SmolLM2-135M/blob/d6a5589c239236d22370e2126bbe23d4843c47d9/model.safetensors)
 

@@ -39,8 +39,8 @@ def exact_search(vectors, blocks, seed_batch=4096):
 
 def pack(seeds, exponents, seed_bits):
     """Pack consecutive little-endian fields with at most seven tail padding bits."""
-    if not 1 <= seed_bits <= 16:
-        raise ValueError("Seed field must be 1–16 bits")
+    if not 1 <= seed_bits <= 20:
+        raise ValueError("Seed field must be 1–20 bits")
     seeds, exponents = np.asarray(seeds), np.asarray(exponents)
     if (seeds.shape != exponents.shape or seeds.ndim != 1
             or not np.issubdtype(seeds.dtype, np.integer) or not np.issubdtype(exponents.dtype, np.integer)
@@ -54,7 +54,7 @@ def pack(seeds, exponents, seed_bits):
 
 def decode(program, payload, seed_bits, width, *, count=None):
     """Independent scalar packed decoder, with no dependency on NumPy execution."""
-    if not 1 <= seed_bits <= 16 or width < 1:
+    if not 1 <= seed_bits <= 20 or width < 1:
         raise ValueError("Invalid packed layout")
     bits = seed_bits + 4
     if count is None:

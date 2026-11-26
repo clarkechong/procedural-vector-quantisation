@@ -1,0 +1,9 @@
+{
+  "blocks": 128,
+  "gpu_seconds": 0.20018460000028426,
+  "cpu_seconds": 0.12359610000021348,
+  "speedup": 0.6174106299887103,
+  "all_double_match": true,
+  "numpy_match_blocks": 16,
+  "packed_match": true
+}

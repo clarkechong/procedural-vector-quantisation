@@ -138,4 +138,6 @@ Use `--ops` and `--constants` to change the grammar, `--seed-bits` to change the
 
 The full-model run applies the frozen synthesized generator and the published 3- and 4-bit SeedLM configurations to all attention and MLP projections in SmolLM2-135M. The reference model evaluates reconstructed weights on WikiText-2. The report includes the seed search audit, packed storage, and reproduction commands. [Perplexity report](experiments/results/generator-model-smollm2/README.md)
 
+Use `--methods synthesized_3` to evaluate the same frozen program at 3 bits per projection weight: a 20-bit seed and a signed 4-bit exponent per eight weights. This expands the seed domain rather than performing a new program search. The encoder indexes unscaled codewords once and queries all 16 scales separately, avoiding an index over 16 million scaled encodings. This index is used only for offline encoding; decoding still executes the generator from the packed seed and exponent.
+
 Use SmolLM2 for fast, controlled comparisons. Use Llama 2 7B for comparisons against the published perplexity numbers. The larger-model guide covers sharded checkpoints, the Linux SeedLM build, optional CUDA offload, and the WikiText-2 evaluation settings. [Llama 2 7B reference run](experiments/evaluation/llama2-7b.md)

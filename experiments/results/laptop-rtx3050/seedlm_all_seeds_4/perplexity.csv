@@ -1,0 +1,2 @@
+method,projection_weights,packed_bytes,projection_bpw,weight_nmse,nll,perplexity,scored_tokens,encode_seconds,eval_seconds
+seedlm_all_seeds_4,106168320,53084160,4.0,0.03679048783898977,4.989921058794011,146.92482461504122,304680,1025.3278447000002,117.19987949999995

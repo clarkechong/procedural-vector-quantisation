@@ -1,0 +1,2 @@
+method,projection_weights,packed_bytes,projection_bpw,weight_nmse,nll,perplexity,scored_tokens,encode_seconds,eval_seconds
+synthesized_2,106168320,26542080,2.0,0.21636039676072188,14.953417593740769,3120230.994490535,304680,122.64400240000032,148.66895719999957

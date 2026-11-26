@@ -21,7 +21,7 @@ from experiments.manifests.weights import PROJECTIONS, Weights
 RESULTS = Path(__file__).resolve().parents[1] / "results"
 DEFAULT_WINNERS = RESULTS / "generator-search-smollm2" / "winners.json"
 
-METHODS = ("original", "synthesized_2", "synthesized_2p5", "seedlm_paper_3", "seedlm_paper_4",
+METHODS = ("original", "synthesized_2", "synthesized_2p5", "synthesized_3", "seedlm_paper_3", "seedlm_paper_4",
            "seedlm_all_seeds_3", "seedlm_all_seeds_4")
 
 
@@ -129,6 +129,7 @@ def main():
     factories = {
         "synthesized_2": lambda: DirectEncoder(program, 12, args.threads),
         "synthesized_2p5": lambda: DirectEncoder(program, 16, args.threads),
+        "synthesized_3": lambda: DirectEncoder(program, 20, args.threads),
         "seedlm_paper_3": lambda: PaperEncoder(PUBLISHED[0], args.pool, args.library, args.threads),
         "seedlm_paper_4": lambda: PaperEncoder(PUBLISHED[1], args.pool, args.library, args.threads),
         "seedlm_all_seeds_3": lambda: PaperEncoder(PUBLISHED[0], args.pool, args.library, args.threads,
