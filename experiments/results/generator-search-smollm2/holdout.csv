@@ -1,0 +1,46 @@
+method,bits_per_weight,bits_per_block,nmse,rmse,unique_unscaled,unique_scaled,effective_rank,used_seeds,shared_bytes,bpw_including_shared_on_sampled_matrices,instructions,dependency_depth,peak_live_values,cost_per_block,note
+Synthesized 1-op,1.25,10,0.7040331108836518,0.18264037506587175,64,,5.533019582633257,64,12,1.2500090422453705,1,1,2,33,1-8; packed reconstruction verified
+Synthesized 2-op,1.25,10,0.6585941066665878,0.17664818034298055,64,,4.725556717247131,58,23,1.250017330970293,2,2,2,41,2-3943; packed reconstruction verified
+Synthesized 3-op,1.25,10,0.5646918767702068,0.16357089056259122,64,,7.513670043362368,64,34,1.250025619695216,3,3,2,49,3-9796; packed reconstruction verified
+LFSR,1.25,10,0.6456191438126522,0.17489945162417342,64,,7.316556396038312,64,0,1.25,,,,,7 integer operations/weight; plus output and scale
+Xorshift,1.25,10,0.6368759770189631,0.1737111445679101,64,,7.477734011152588,64,0,1.25,,,,,6 integer operations/weight + 8/block; plus output and scale
+SplitMix,1.25,10,0.8419941367022861,0.19973527950982667,64,,7.478373333566842,63,0,1.25,,,,,10 integer operations/weight + 1/block; plus output and scale
+Lloyd–Max,1.25,10,0.3997130915916117,0.13761774409765865,,,,,252,1.2501898871527777,,,,,FP16 levels per matrix; one lookup per weight
+Refined SeedLM,1.25,10,0.5470984656014696,0.16100263595581055,,,,,0,1.25,,,,,"4-bit seed; 1 bases with 2-bit coefficients; 7 integer operations/weight plus basis normalization, weighted sum and exponent scaling"
+Gaussian codebook,1.25,10,0.4604954346909879,0.14771102524198604,64,,7.2816729797198985,64,512,1.2503858024691359,,,,,Explicit INT8 codebook; one eight-byte codeword read per block
+Trained VQ,1.25,10,0.42098044607251456,0.14123138237307012,64,,7.968964195844054,64,512,1.2503858024691359,,,,,Explicit INT8 codebook; one eight-byte codeword read per block
+Synthesized 1-op,1.5,12,0.555947966094252,0.16229955194797294,256,,6.996384950569239,206,12,1.5000090422453705,1,1,2,33,1-8; packed reconstruction verified
+Synthesized 2-op,1.5,12,0.47552077924147346,0.15010148806616097,256,,6.685614641623476,225,23,1.500017330970293,2,2,2,41,2-3943; packed reconstruction verified
+Synthesized 3-op,1.5,12,0.38780750933268676,0.13555275702728342,256,,7.902331336066913,230,34,1.500025619695216,3,3,2,49,3-9796; packed reconstruction verified
+LFSR,1.5,12,0.4847712544101182,0.15155444474804475,256,,7.328369453968002,217,0,1.5,,,,,7 integer operations/weight; plus output and scale
+Xorshift,1.5,12,0.4816989477285168,0.15107343250566715,256,,7.8776479854890695,222,0,1.5,,,,,6 integer operations/weight + 8/block; plus output and scale
+SplitMix,1.5,12,0.5599392094450792,0.16288109786310428,256,,7.905686749965876,220,0,1.5,,,,,10 integer operations/weight + 1/block; plus output and scale
+Lloyd–Max,1.5,12,0.3216708793416306,0.12345427153299532,,,,,252,1.5001898871527777,,,,,FP16 levels per matrix; one lookup per weight
+Refined SeedLM,1.5,12,0.4193602813241477,0.14095935225486755,,,,,0,1.5,,,,,"6-bit seed; 1 bases with 2-bit coefficients; 7 integer operations/weight plus basis normalization, weighted sum and exponent scaling"
+Gaussian codebook,1.5,12,0.3332402253728976,0.12565476370025389,256,,7.886667879873329,256,2048,1.501543209876543,,,,,Explicit INT8 codebook; one eight-byte codeword read per block
+Trained VQ,1.5,12,0.3072210303336927,0.12064955341169213,256,,7.989644134197685,256,2048,1.501543209876543,,,,,Explicit INT8 codebook; one eight-byte codeword read per block
+Synthesized 1-op,2.0,16,0.555947966094252,0.16229955194797294,256,4081,6.996384950569239,206,12,2.0000090422453702,1,1,2,33,1-8; packed reconstruction verified
+Synthesized 2-op,2.0,16,0.23622250393769254,0.10579396213164761,3791,60332,7.897405667599341,1388,23,2.000017330970293,2,2,2,41,2-3943; packed reconstruction verified
+Synthesized 3-op,2.0,16,0.1991026544614586,0.0971267312661345,4093,65473,7.951467913622164,1374,34,2.000025619695216,3,3,2,49,3-9796; packed reconstruction verified
+LFSR,2.0,16,0.38907568482336846,0.1357742127395653,4096,65521,7.328369453968002,852,0,2.0,,,,,7 integer operations/weight; plus output and scale
+LFSR (calibrated),2.0,16,0.280496522358635,0.11528265997470784,4096,65521,7.316556396038312,1458,0,2.0,,,,,Validation picked arithmetic output shift 2 of 0–5; 7 integer operations/weight plus output and scale
+Xorshift,2.0,16,0.267298881858941,0.1125379031783948,4096,65521,7.990836484669225,1026,0,2.0,,,,,6 integer operations/weight + 8/block; plus output and scale
+Xorshift (calibrated),2.0,16,0.19407934876371055,0.09589366361438571,4096,65521,7.990814671354635,1854,0,2.0,,,,,Validation picked arithmetic output shift 2 of 0–5; 6 integer operations/weight + 8/block plus output and scale
+SplitMix,2.0,16,0.2854886833836966,0.11630401215273818,4096,65536,7.990926692252859,1006,0,2.0,,,,,10 integer operations/weight + 1/block; plus output and scale
+SplitMix (calibrated),2.0,16,0.18807419604093478,0.09439844819491566,4096,65536,7.991188048830537,1876,0,2.0,,,,,Validation picked arithmetic output shift 3 of 0–5; 10 integer operations/weight + 1/block plus output and scale
+Lloyd–Max,2.0,16,0.17292245673746115,0.09051612354473113,,,,,168,2.000126591435185,,,,,FP16 levels per matrix; one lookup per weight
+Refined SeedLM,2.0,16,0.21658262048044513,0.10130060464143753,,,,,0,2.0,,,,,"8-bit seed; 2 bases with 2-bit coefficients; 14 integer operations/weight plus basis normalization, weighted sum and exponent scaling"
+Gaussian codebook,2.0,16,0.16861471745802234,0.089381571803502,4096,65536,7.992005782550286,1969,32768,2.0246913580246915,,,,,Explicit INT8 codebook; one eight-byte codeword read per block
+Trained VQ,2.0,16,0.164492144669222,0.0882821354112948,4096,65536,7.992506827572428,1957,32768,2.0246913580246915,,,,,Explicit INT8 codebook; one eight-byte codeword read per block
+Constant,2.0,16,1.0,0.21767083739665688,1,1,0.0,1,0,2.0,,,,,Degenerate control
+Seed only,2.0,16,0.8831796595916318,0.20456191335885657,256,2176,1.0000000000000049,105,0,2.0,,,,,Degenerate control
+Index only,2.0,16,0.9646894488327143,0.2137932613145341,1,16,0.0,1,0,2.0,,,,,Degenerate control
+Synthesized 1-op,2.5,20,0.555947966094252,0.16229955194797294,256,,6.996384950569239,206,12,2.5000090422453702,1,1,2,33,1-8; packed reconstruction verified
+Synthesized 2-op,2.5,20,0.14837622457787433,0.08384601108466418,57338,,7.932540172260479,2344,23,2.500017330970293,2,2,2,41,2-3943; packed reconstruction verified
+Synthesized 3-op,2.5,20,0.10997002088985341,0.07218341119534229,65353,,7.956851438257166,2406,34,2.500025619695216,3,3,2,49,3-9796; packed reconstruction verified
+LFSR,2.5,20,0.3798477347070622,0.13415443001326427,32768,,7.328369453968002,1246,0,2.5,,,,,7 integer operations/weight; plus output and scale
+Xorshift,2.5,20,0.1423634862375123,0.08212957119068563,65536,,7.999626526565004,1845,0,2.5,,,,,6 integer operations/weight + 8/block; plus output and scale
+SplitMix,2.5,20,0.1508524380141922,0.08454275863099434,65536,,7.999349466053015,1828,0,2.5,,,,,10 integer operations/weight + 1/block; plus output and scale
+Lloyd–Max,2.5,20,0.11606695495193763,0.07415740830086359,,,,,504,2.5003797743055554,,,,,FP16 levels per matrix; one lookup per weight
+Refined SeedLM,2.5,20,0.10982027830547103,0.07213424891233444,,,,,0,2.5,,,,,"8-bit seed; 4 bases with 2-bit coefficients; 28 integer operations/weight plus basis normalization, weighted sum and exponent scaling"
+Gaussian codebook,2.5,20,0.08468399592446095,0.06334333416287118,65536,,7.999496261162526,2631,524288,2.8950617283950617,,,,,Explicit INT8 codebook; one eight-byte codeword read per block

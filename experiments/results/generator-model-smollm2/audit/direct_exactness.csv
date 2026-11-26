@@ -1,0 +1,3 @@
+seed_bits,blocks,max_sse_difference,same_vectors
+12,192,0.0,True
+16,192,0.0,True

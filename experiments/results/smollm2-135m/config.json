@@ -1,0 +1,48 @@
+{
+  "checkpoint": "/tmp/kolmogorov-smollm2-135m.safetensors",
+  "out": "results/smollm2-135m",
+  "layers": [
+    0,
+    15,
+    29
+  ],
+  "projections": [
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj"
+  ],
+  "blocks": [
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "tiles": 32,
+  "repeats": 19,
+  "seed": 20261124,
+  "seeds": 16,
+  "max_atoms": 16,
+  "injection": 1.0,
+  "skip_rows": false,
+  "whole_matrix": false,
+  "permutation": true,
+  "rates": [
+    0.25,
+    0.5,
+    1,
+    2,
+    3,
+    4,
+    6,
+    8
+  ],
+  "numpy": "2.4.2",
+  "checkpoint_sha256": {
+    "kolmogorov-smollm2-135m.safetensors": "80521b40281d6ce74e35c9282c22539e75aa0ac8578892b2a59955ef78d55da1"
+  }
+}

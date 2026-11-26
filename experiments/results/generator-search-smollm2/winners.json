@@ -1,0 +1,65 @@
+{
+  "1-8": {
+    "instructions": [
+      {
+        "op": "SHL",
+        "args": [
+          "s",
+          "i"
+        ]
+      }
+    ],
+    "payload": "winner-1.bin",
+    "payload_bytes": 5376,
+    "sha256": "cb6afbd01dc93acbd540ca1845aed8f18198d6b80803d88e6d973a6dc0ce9a9e"
+  },
+  "2-3943": {
+    "instructions": [
+      {
+        "op": "SHR",
+        "args": [
+          "s",
+          "i"
+        ]
+      },
+      {
+        "op": "ROTL",
+        "args": [
+          "s",
+          "r0"
+        ]
+      }
+    ],
+    "payload": "winner-2.bin",
+    "payload_bytes": 5376,
+    "sha256": "6cf1534e8577eef5a1fc5ac4cad186c61e0a0f4c00c21bbcad094fee725dfa1b"
+  },
+  "3-9796": {
+    "instructions": [
+      {
+        "op": "MUL",
+        "args": [
+          "s",
+          2654435769
+        ]
+      },
+      {
+        "op": "SHR",
+        "args": [
+          "r0",
+          "i"
+        ]
+      },
+      {
+        "op": "SHR",
+        "args": [
+          "r1",
+          "r1"
+        ]
+      }
+    ],
+    "payload": "winner-3.bin",
+    "payload_bytes": 5376,
+    "sha256": "a90e42d19e3538b6821717e93e6ca276dc6d0682622ae94461865b51b0669bbb"
+  }
+}

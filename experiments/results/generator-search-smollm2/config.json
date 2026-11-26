@@ -1,0 +1,66 @@
+{
+  "checkpoint": "/tmp/kolmogorov-smollm2-135m.safetensors",
+  "out": "results/generator-search-smollm2",
+  "ops": [
+    "ADD",
+    "SUB",
+    "MUL",
+    "XOR",
+    "AND",
+    "OR",
+    "NOT",
+    "SHL",
+    "SHR",
+    "ROTL",
+    "POPCOUNT"
+  ],
+  "constants": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    13,
+    16,
+    17,
+    24,
+    31,
+    33,
+    127,
+    255,
+    16843009,
+    73244475,
+    2654435769,
+    4294967295
+  ],
+  "seed_bits": 12,
+  "max_cost": 49,
+  "three_limit": 240000,
+  "finalists": 64,
+  "max_instructions": 3,
+  "block_width": 8,
+  "exponent_bits": 4,
+  "sample_seed": 810642,
+  "enumeration_seed": 901416,
+  "layers": [
+    0,
+    15,
+    29
+  ],
+  "checkpoint_sha256": {
+    "kolmogorov-smollm2-135m.safetensors": "80521b40281d6ce74e35c9282c22539e75aa0ac8578892b2a59955ef78d55da1"
+  },
+  "split_blocks": {
+    "calibration": 10752,
+    "screen": 336,
+    "validation": 1344,
+    "holdout": 2688
+  },
+  "sample_matrix_weight_count": 10616832,
+  "python": "3.14.4",
+  "numpy": "2.4.2",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O"
+}

@@ -1,0 +1,12 @@
+{
+  "checkpoint_sha256": "80521b40281d6ce74e35c9282c22539e75aa0ac8578892b2a59955ef78d55da1",
+  "layers": [
+    0,
+    15,
+    29
+  ],
+  "rng_seed": 20261124,
+  "oracle_blocks": 2,
+  "subspace_blocks": 24,
+  "spans": 2
+}

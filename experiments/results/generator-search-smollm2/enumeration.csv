@@ -1,0 +1,4 @@
+instructions,exhaustive,raw_prefixes,live_dags,guided,random,syntactically_independent,degenerate,equivalent,collision_checks,distinct_collisions,distinct_scored,total_seconds,exact_search_seconds
+1,True,1,1166,0,0,1153,0,1,1,0,12,0.027915374841541052,0.02454474987462163
+2,True,1166,324148,0,0,313982,1377,3770,4008,86,5019,12.014609625097364,9.869345951359719
+3,False,1683704,240000,18624,221376,206633,4411,7448,8196,177,21508,50.98545637493953,43.9413172644563

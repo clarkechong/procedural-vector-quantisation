@@ -1,0 +1,357 @@
+{
+  "checkpoint": "/tmp/kolmogorov-smollm2-135m.safetensors",
+  "out": "results/seedlm-smollm2",
+  "layers": [
+    0,
+    15,
+    29
+  ],
+  "spans": 2,
+  "seed": 20261124,
+  "phase": "all",
+  "screen_limit": 1024,
+  "checkpoint_sha256": {
+    "kolmogorov-smollm2-135m.safetensors": "80521b40281d6ce74e35c9282c22539e75aa0ac8578892b2a59955ef78d55da1"
+  },
+  "numpy": "2.4.2",
+  "finalists": {
+    "1": {
+      "block": 32,
+      "latent": 5,
+      "seed_bits": 12,
+      "coefficient_bits": 3,
+      "family": "lfsr"
+    },
+    "2": {
+      "block": 12,
+      "latent": 4,
+      "seed_bits": 8,
+      "coefficient_bits": 3,
+      "family": "lfsr"
+    },
+    "3": {
+      "block": 8,
+      "latent": 4,
+      "seed_bits": 8,
+      "coefficient_bits": 3,
+      "family": "lfsr"
+    },
+    "4": {
+      "block": 8,
+      "latent": 5,
+      "seed_bits": 8,
+      "coefficient_bits": 4,
+      "family": "lfsr"
+    }
+  },
+  "encoding_seconds": [
+    {
+      "experiment": "published",
+      "block": 12,
+      "latent": 4,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "lfsr",
+      "fitting": "joint",
+      "rules": [
+        "paper",
+        "range",
+        "float"
+      ],
+      "seconds": 21.223253041971475
+    },
+    {
+      "experiment": "published",
+      "block": 8,
+      "latent": 3,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "lfsr",
+      "fitting": "joint",
+      "rules": [
+        "paper",
+        "range",
+        "float"
+      ],
+      "seconds": 20.344640708062798
+    },
+    {
+      "experiment": "fitting",
+      "block": 12,
+      "latent": 4,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "lfsr",
+      "fitting": "greedy",
+      "rules": [
+        "range",
+        "paper"
+      ],
+      "seconds": 59.53369304165244
+    },
+    {
+      "experiment": "quantization_aware",
+      "block": 12,
+      "latent": 4,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "lfsr",
+      "fitting": "joint",
+      "rules": [
+        "refine"
+      ],
+      "seconds": 37.15585616696626
+    },
+    {
+      "experiment": "matched_family",
+      "block": 12,
+      "latent": 4,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "independent_lfsr",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "paper"
+      ],
+      "seconds": 14.418944709002972
+    },
+    {
+      "experiment": "matched_family",
+      "block": 12,
+      "latent": 4,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "xorshift",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "paper"
+      ],
+      "seconds": 19.141234416980296
+    },
+    {
+      "experiment": "matched_family",
+      "block": 12,
+      "latent": 4,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "splitmix",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "paper"
+      ],
+      "seconds": 18.79717604070902
+    },
+    {
+      "experiment": "matched_family",
+      "block": 12,
+      "latent": 4,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "counter",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "paper"
+      ],
+      "seconds": 18.656130791641772
+    },
+    {
+      "experiment": "matched_family",
+      "block": 12,
+      "latent": 4,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "hadamard",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "paper"
+      ],
+      "seconds": 16.750505041796714
+    },
+    {
+      "experiment": "matched_family",
+      "block": 12,
+      "latent": 4,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "mixed",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "paper"
+      ],
+      "seconds": 18.889820583164692
+    },
+    {
+      "experiment": "fitting",
+      "block": 8,
+      "latent": 3,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "lfsr",
+      "fitting": "greedy",
+      "rules": [
+        "range",
+        "paper"
+      ],
+      "seconds": 63.574588333722204
+    },
+    {
+      "experiment": "quantization_aware",
+      "block": 8,
+      "latent": 3,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "lfsr",
+      "fitting": "joint",
+      "rules": [
+        "refine"
+      ],
+      "seconds": 40.08187979180366
+    },
+    {
+      "experiment": "matched_family",
+      "block": 8,
+      "latent": 3,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "independent_lfsr",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "paper"
+      ],
+      "seconds": 16.30290495790541
+    },
+    {
+      "experiment": "matched_family",
+      "block": 8,
+      "latent": 3,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "xorshift",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "paper"
+      ],
+      "seconds": 17.726016875356436
+    },
+    {
+      "experiment": "matched_family",
+      "block": 8,
+      "latent": 3,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "splitmix",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "paper"
+      ],
+      "seconds": 17.71506229089573
+    },
+    {
+      "experiment": "matched_family",
+      "block": 8,
+      "latent": 3,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "counter",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "paper"
+      ],
+      "seconds": 17.575516374781728
+    },
+    {
+      "experiment": "matched_family",
+      "block": 8,
+      "latent": 3,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "hadamard",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "paper"
+      ],
+      "seconds": 16.98002116708085
+    },
+    {
+      "experiment": "matched_family",
+      "block": 8,
+      "latent": 3,
+      "seed_bits": 16,
+      "coefficient_bits": 4,
+      "family": "mixed",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "paper"
+      ],
+      "seconds": 17.78892504191026
+    },
+    {
+      "experiment": "screen_finalist",
+      "block": 32,
+      "latent": 5,
+      "seed_bits": 12,
+      "coefficient_bits": 3,
+      "family": "lfsr",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "refine"
+      ],
+      "seconds": 2.1558689577504992
+    },
+    {
+      "experiment": "screen_finalist",
+      "block": 12,
+      "latent": 4,
+      "seed_bits": 8,
+      "coefficient_bits": 3,
+      "family": "lfsr",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "refine"
+      ],
+      "seconds": 0.19126370828598738
+    },
+    {
+      "experiment": "screen_finalist",
+      "block": 8,
+      "latent": 4,
+      "seed_bits": 8,
+      "coefficient_bits": 3,
+      "family": "lfsr",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "refine"
+      ],
+      "seconds": 0.22942445799708366
+    },
+    {
+      "experiment": "screen_finalist",
+      "block": 8,
+      "latent": 5,
+      "seed_bits": 8,
+      "coefficient_bits": 4,
+      "family": "lfsr",
+      "fitting": "joint",
+      "rules": [
+        "range",
+        "refine"
+      ],
+      "seconds": 0.25962112471461296
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+backend,family,operation,blocks,repeats,median_seconds,gweights_per_s,packed_input_gb_per_s,minimum_total_gb_per_s,max_reference_difference,checksum
+CPU,lfsr,materialize,2097152,9,0.016759,1.00109,0.500543,4.50489,0,45837.2
+CPU,lfsr,block_dot,2097152,9,0.0245992,0.682024,0.341012,0.682024,0,75777
+CPU,binary,materialize,2097152,9,0.0114682,1.46293,0.731466,6.5832,0,56737.2
+CPU,binary,block_dot,2097152,9,0.0222605,0.753677,0.376838,0.753677,0,239866
+CPU,ternary,materialize,2097152,9,0.018087,0.927582,0.463791,4.17412,0,-2121.61
+CPU,ternary,block_dot,2097152,9,0.0284182,0.590369,0.295185,0.590369,0,88782.8
+CPU,xorshift,materialize,2097152,9,0.0374845,0.447577,0.223788,2.0141,0,64979.4
+CPU,xorshift,block_dot,2097152,9,0.0392495,0.42745,0.213725,0.42745,0,77845.8
+CPU,splitmix,materialize,2097152,9,0.0342116,0.490395,0.245198,2.20678,0,-52644.4
+CPU,splitmix,block_dot,2097152,9,0.0377102,0.444899,0.22245,0.444899,0,50001.9

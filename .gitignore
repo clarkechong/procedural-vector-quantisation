@@ -1,0 +1,29 @@
+# Python and uv working files
+__pycache__/
+*.py[cod]
+*.egg-info/
+/.venv/
+/.uv-cache/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+/htmlcov/
+
+# Local inputs, scratch runs, and native build products
+/data/
+/runs/
+/build/
+/dist/
+*.safetensors
+*.partial.csv.gz
+*.o
+*.so
+*.dylib
+*.dll
+*.dSYM/
+
+# Local machine files
+.DS_Store
+.env
+.env.local
