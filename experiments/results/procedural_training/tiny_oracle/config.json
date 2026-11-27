@@ -1,0 +1,9 @@
+{
+  "seed": 20261127,
+  "samples": 96,
+  "trials_per_family": 12,
+  "target_noise": 0.35,
+  "step_size": 0.1,
+  "dataset": "synthetic Gaussian inputs",
+  "runtime_s": 0.09555152500001896
+}

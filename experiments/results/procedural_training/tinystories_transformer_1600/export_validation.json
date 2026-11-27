@@ -1,0 +1,23 @@
+[
+  {
+    "method": "scalar2",
+    "bytes": 617536,
+    "bits": 4940288,
+    "max_logit_difference": 3.814697265625e-06,
+    "parameters": 891648
+  },
+  {
+    "method": "procedural2",
+    "bytes": 617536,
+    "bits": 4940288,
+    "max_logit_difference": 3.337860107421875e-06,
+    "parameters": 891648
+  },
+  {
+    "method": "procedural1",
+    "bytes": 519232,
+    "bits": 4153856,
+    "max_logit_difference": 2.1457672119140625e-06,
+    "parameters": 891648
+  }
+]

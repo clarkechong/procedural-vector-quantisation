@@ -1,0 +1,7 @@
+codewords_used,deployed_bits,deployed_bpw,max_decoder_error,method,seed,training_optimizer,training_shadow_weights
+256,482208,2.0541166848418757,0.0,scalar_qat,11,"Adam, dense shadow and first/second moments",234752
+256,482208,2.0541166848418757,0.0,procedural_qat,11,"Adam, dense shadow and first/second moments",234752
+256,482208,2.0541166848418757,0.0,scalar_qat,17,"Adam, dense shadow and first/second moments",234752
+256,482208,2.0541166848418757,0.0,procedural_qat,17,"Adam, dense shadow and first/second moments",234752
+256,482208,2.0541166848418757,0.0,scalar_qat,23,"Adam, dense shadow and first/second moments",234752
+256,482208,2.0541166848418757,0.0,procedural_qat,23,"Adam, dense shadow and first/second moments",234752

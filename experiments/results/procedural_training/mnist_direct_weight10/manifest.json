@@ -1,0 +1,15 @@
+{
+  "train_count": 55000,
+  "validation_count": 5000,
+  "test_count": 10000,
+  "train_sha256": "a92c7d5520033214a02e68389fc303d070d2a3a0a484d868fc6a07582df47815",
+  "validation_sha256": "851a3e36508d77cf15748e8f333ff450c9d8fcf14b3acda00515a750867ac223",
+  "split_seed": 20261127,
+  "validation_per_class": 500,
+  "files": {
+    "t10k-images-idx3-ubyte.gz": "8d422c7b0a1c1c79245a5bcf07fe86e33eeafee792b84584aec276f5a2dbc4e6",
+    "train-labels-idx1-ubyte.gz": "3552534a0a558bbed6aed32b30c495cca23d567ec52cac8be1a0730e8010255c",
+    "train-images-idx3-ubyte.gz": "440fcabf73cc546fa21475e81ea370265605f56be210a4024d2ca8f203523609",
+    "t10k-labels-idx1-ubyte.gz": "f7ae60f92e00ec6debd23a6088c31dbd2371eca3ffa0defaefb259924204aec6"
+  }
+}

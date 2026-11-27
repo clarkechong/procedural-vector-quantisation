@@ -1,0 +1,8 @@
+{
+  "procedural_weights": 786432,
+  "other_dense_parameters": 105216,
+  "procedural_payload_bits": 25165824,
+  "other_dense_bits": 3366912,
+  "total_bits": 28532736,
+  "projection_bpw": 32.0
+}

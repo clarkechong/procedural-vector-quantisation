@@ -1,0 +1,9 @@
+[
+  {
+    "method": "latent2",
+    "bytes": 617536,
+    "bits": 4940288,
+    "max_logit_difference": 0.0,
+    "parameters": 891648
+  }
+]

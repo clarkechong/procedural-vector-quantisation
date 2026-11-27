@@ -1,0 +1,19 @@
+{
+  "epochs": 20,
+  "seeds": [
+    11,
+    17,
+    23
+  ],
+  "batch_size": 256,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "architecture": [
+    784,
+    256,
+    128,
+    10
+  ],
+  "scale": "frozen layer RMS at paired dense initialization",
+  "device": "cuda"
+}

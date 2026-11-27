@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    "mnist",
+    "fashion-mnist"
+  ],
+  "seeds": [
+    11,
+    17,
+    23
+  ],
+  "epochs": 5,
+  "architecture": [
+    784,
+    256,
+    128,
+    10
+  ],
+  "optimizer": "Adam lr 0.001",
+  "batch_size": 256,
+  "scales": "frozen paired initialization RMS",
+  "device": "cuda",
+  "split": {
+    "dataset": "data/fashion-mnist",
+    "train_count": 55000,
+    "validation_count": 5000,
+    "test_count": 10000,
+    "train_sha256": "925669fb3442d5e9aee3c1b3b1fb4165590f67a3d988a250324d3f6e1bda09a2",
+    "validation_sha256": "946a9ef85f1031e2a7adaafcb630bf9e8a8d5d0468d2568a52b5251b03200ced",
+    "split_seed": 20261127,
+    "validation_per_class": 500,
+    "files": {
+      "t10k-images-idx3-ubyte.gz": "346e55b948d973a97e58d2351dde16a484bd415d4595297633bb08f03db6a073",
+      "train-labels-idx1-ubyte.gz": "a04f17134ac03560a47e3764e11b92fc97de4d1bfaf8ba1a3aa29af54cc90845",
+      "train-images-idx3-ubyte.gz": "3aede38d61863908ad78613f6a32ed271626dd12800ba2636569512369268a84",
+      "t10k-labels-idx1-ubyte.gz": "67da17c76eaffca5446c3361aaab5c3cd6d1c2608764d35dfb1850b086bf8dd5"
+    }
+  },
+  "note": "Test rows are previously exposed; exploratory, not blind confirmation"
+}

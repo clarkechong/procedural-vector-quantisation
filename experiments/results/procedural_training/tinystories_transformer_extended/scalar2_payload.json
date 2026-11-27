@@ -1,0 +1,530 @@
+[
+  {
+    "name": "embedding.weight",
+    "kind": "float32",
+    "shape": [
+      256,
+      128
+    ],
+    "offset": 0,
+    "bytes": 131072
+  },
+  {
+    "name": "position.weight",
+    "kind": "float32",
+    "shape": [
+      256,
+      128
+    ],
+    "offset": 131072,
+    "bytes": 131072
+  },
+  {
+    "name": "blocks.0.ln1.weight",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 262144,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.0.ln1.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 262656,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.0.qkv.weight",
+    "kind": "scalar2",
+    "shape": [
+      384,
+      128
+    ],
+    "offset": 263172,
+    "bytes": 12288,
+    "scale_offset": 263168,
+    "width": 0
+  },
+  {
+    "name": "blocks.0.qkv.bias",
+    "kind": "float32",
+    "shape": [
+      384
+    ],
+    "offset": 275460,
+    "bytes": 1536
+  },
+  {
+    "name": "blocks.0.proj.weight",
+    "kind": "scalar2",
+    "shape": [
+      128,
+      128
+    ],
+    "offset": 277000,
+    "bytes": 4096,
+    "scale_offset": 276996,
+    "width": 0
+  },
+  {
+    "name": "blocks.0.proj.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 281096,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.0.ln2.weight",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 281608,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.0.ln2.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 282120,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.0.up.weight",
+    "kind": "scalar2",
+    "shape": [
+      512,
+      128
+    ],
+    "offset": 282636,
+    "bytes": 16384,
+    "scale_offset": 282632,
+    "width": 0
+  },
+  {
+    "name": "blocks.0.up.bias",
+    "kind": "float32",
+    "shape": [
+      512
+    ],
+    "offset": 299020,
+    "bytes": 2048
+  },
+  {
+    "name": "blocks.0.down.weight",
+    "kind": "scalar2",
+    "shape": [
+      128,
+      512
+    ],
+    "offset": 301072,
+    "bytes": 16384,
+    "scale_offset": 301068,
+    "width": 0
+  },
+  {
+    "name": "blocks.0.down.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 317456,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.1.ln1.weight",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 317968,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.1.ln1.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 318480,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.1.qkv.weight",
+    "kind": "scalar2",
+    "shape": [
+      384,
+      128
+    ],
+    "offset": 318996,
+    "bytes": 12288,
+    "scale_offset": 318992,
+    "width": 0
+  },
+  {
+    "name": "blocks.1.qkv.bias",
+    "kind": "float32",
+    "shape": [
+      384
+    ],
+    "offset": 331284,
+    "bytes": 1536
+  },
+  {
+    "name": "blocks.1.proj.weight",
+    "kind": "scalar2",
+    "shape": [
+      128,
+      128
+    ],
+    "offset": 332824,
+    "bytes": 4096,
+    "scale_offset": 332820,
+    "width": 0
+  },
+  {
+    "name": "blocks.1.proj.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 336920,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.1.ln2.weight",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 337432,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.1.ln2.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 337944,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.1.up.weight",
+    "kind": "scalar2",
+    "shape": [
+      512,
+      128
+    ],
+    "offset": 338460,
+    "bytes": 16384,
+    "scale_offset": 338456,
+    "width": 0
+  },
+  {
+    "name": "blocks.1.up.bias",
+    "kind": "float32",
+    "shape": [
+      512
+    ],
+    "offset": 354844,
+    "bytes": 2048
+  },
+  {
+    "name": "blocks.1.down.weight",
+    "kind": "scalar2",
+    "shape": [
+      128,
+      512
+    ],
+    "offset": 356896,
+    "bytes": 16384,
+    "scale_offset": 356892,
+    "width": 0
+  },
+  {
+    "name": "blocks.1.down.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 373280,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.2.ln1.weight",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 373792,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.2.ln1.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 374304,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.2.qkv.weight",
+    "kind": "scalar2",
+    "shape": [
+      384,
+      128
+    ],
+    "offset": 374820,
+    "bytes": 12288,
+    "scale_offset": 374816,
+    "width": 0
+  },
+  {
+    "name": "blocks.2.qkv.bias",
+    "kind": "float32",
+    "shape": [
+      384
+    ],
+    "offset": 387108,
+    "bytes": 1536
+  },
+  {
+    "name": "blocks.2.proj.weight",
+    "kind": "scalar2",
+    "shape": [
+      128,
+      128
+    ],
+    "offset": 388648,
+    "bytes": 4096,
+    "scale_offset": 388644,
+    "width": 0
+  },
+  {
+    "name": "blocks.2.proj.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 392744,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.2.ln2.weight",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 393256,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.2.ln2.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 393768,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.2.up.weight",
+    "kind": "scalar2",
+    "shape": [
+      512,
+      128
+    ],
+    "offset": 394284,
+    "bytes": 16384,
+    "scale_offset": 394280,
+    "width": 0
+  },
+  {
+    "name": "blocks.2.up.bias",
+    "kind": "float32",
+    "shape": [
+      512
+    ],
+    "offset": 410668,
+    "bytes": 2048
+  },
+  {
+    "name": "blocks.2.down.weight",
+    "kind": "scalar2",
+    "shape": [
+      128,
+      512
+    ],
+    "offset": 412720,
+    "bytes": 16384,
+    "scale_offset": 412716,
+    "width": 0
+  },
+  {
+    "name": "blocks.2.down.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 429104,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.3.ln1.weight",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 429616,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.3.ln1.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 430128,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.3.qkv.weight",
+    "kind": "scalar2",
+    "shape": [
+      384,
+      128
+    ],
+    "offset": 430644,
+    "bytes": 12288,
+    "scale_offset": 430640,
+    "width": 0
+  },
+  {
+    "name": "blocks.3.qkv.bias",
+    "kind": "float32",
+    "shape": [
+      384
+    ],
+    "offset": 442932,
+    "bytes": 1536
+  },
+  {
+    "name": "blocks.3.proj.weight",
+    "kind": "scalar2",
+    "shape": [
+      128,
+      128
+    ],
+    "offset": 444472,
+    "bytes": 4096,
+    "scale_offset": 444468,
+    "width": 0
+  },
+  {
+    "name": "blocks.3.proj.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 448568,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.3.ln2.weight",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 449080,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.3.ln2.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 449592,
+    "bytes": 512
+  },
+  {
+    "name": "blocks.3.up.weight",
+    "kind": "scalar2",
+    "shape": [
+      512,
+      128
+    ],
+    "offset": 450108,
+    "bytes": 16384,
+    "scale_offset": 450104,
+    "width": 0
+  },
+  {
+    "name": "blocks.3.up.bias",
+    "kind": "float32",
+    "shape": [
+      512
+    ],
+    "offset": 466492,
+    "bytes": 2048
+  },
+  {
+    "name": "blocks.3.down.weight",
+    "kind": "scalar2",
+    "shape": [
+      128,
+      512
+    ],
+    "offset": 468544,
+    "bytes": 16384,
+    "scale_offset": 468540,
+    "width": 0
+  },
+  {
+    "name": "blocks.3.down.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 484928,
+    "bytes": 512
+  },
+  {
+    "name": "final_norm.weight",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 485440,
+    "bytes": 512
+  },
+  {
+    "name": "final_norm.bias",
+    "kind": "float32",
+    "shape": [
+      128
+    ],
+    "offset": 485952,
+    "bytes": 512
+  },
+  {
+    "name": "head.weight",
+    "kind": "float32",
+    "shape": [
+      256,
+      128
+    ],
+    "offset": 486464,
+    "bytes": 131072
+  }
+]

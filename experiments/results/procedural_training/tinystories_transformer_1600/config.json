@@ -1,0 +1,33 @@
+{
+  "seed": 11,
+  "architecture": {
+    "layers": 4,
+    "hidden": 128,
+    "heads": 4,
+    "ffn": 512,
+    "context": 256,
+    "tokenizer": "UTF-8 byte",
+    "vocabulary": 256
+  },
+  "train_shard": "data/tinystories/data/train-00000-of-00004-2d5a1467fff1081b.parquet",
+  "validation_shard": "data/tinystories/data/validation-00000-of-00001-869c898b519ad725.parquet",
+  "train_stories": 20000,
+  "valid_stories": 1000,
+  "train_indices_sha256": "0e1189bf24fb25d81f2902c1646af7e764305345316941270d385e5c392f1ae9",
+  "valid_indices_sha256": "2a1e5307179ae3830e8e2b49c900542679f39797cc04a80fa6bddff3138cc3bb",
+  "train_sequences": 69965,
+  "validation_sequences": 3420,
+  "methods": [
+    "dense",
+    "scalar2",
+    "procedural2",
+    "procedural1"
+  ],
+  "steps": 1600,
+  "finetune_steps": 400,
+  "batch_size": 16,
+  "lr": 0.0003,
+  "optimizer": "AdamW",
+  "device": "cuda",
+  "note": "One-seed bounded from-scratch pilot on one of four public training shards; no blind test"
+}

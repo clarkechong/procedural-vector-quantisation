@@ -1,0 +1,5 @@
+{
+  "seed": 11,
+  "batch": 256,
+  "note": "Single fixed minibatch, no LR selection from test"
+}
