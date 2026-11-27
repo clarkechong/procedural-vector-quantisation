@@ -10,6 +10,12 @@ Each directory records the inputs and preserves the outputs for a single study. 
 | Generator synthesis | [Search report](generator-search-smollm2/README.md) |
 | Miniature computational codebooks | [Four-weight search](miniature-codebook/README.md), [scale and grammar follow-up](miniature-codebook-followup/README.md), [overlapping-window follow-up](trellis-followup/README.md) |
 | Generator perplexity | [Evaluation report and partial runs](generator-model-smollm2/README.md) |
+| Experiments 04–07 | [Reference gates, PTQ, trainability and inverse search](experiments-04-07/report.md) |
+| Experiments 08–12 | [QTIP components, low-rate QAT, latent training, inverse scaling and TinyStories](experiments-08-12/report.md) |
+| Llama-2 reference follow-up | [SmoothQuant, released QTIP HYB, INT4 and SeedLM encoder audit](llama2-reference-followup/report.md) |
+| Experiments 13–18 interim | [SeedLM GPU pilot, INT8/activation diagnostics, paired MLP landscape and transfer](experiments-13-18/report.md) |
+| Experiments 19–21 interim | [Batched QTIP encoder, full-projection map substitution and training-map audit](experiments-19-21/report.md) |
+| Experiments 22–26 bounded screen | [Official E-means CPU component, ProSparse grouping gate, prototype-mask oracle and VQ diagnostic](experiments-22-26/decision_report.md) |
 | Laptop model evaluation | [Completed synthesized and SeedLM runs, including 3-bpw synthesis](laptop-rtx3050/README.md) |
 
 The input is the original BF16 checkpoint. The main sweep covers seven projections at each of layers 0, 15 and 29, five tile sizes from 4×4 to 64×64, and full rows. It draws up to 32 tiles per matrix and scale and uses 19 shuffle draws per null. [Checkpoint and SHA-256](https://huggingface.co/HuggingFaceTB/SmolLM2-135M/blob/d6a5589c239236d22370e2126bbe23d4843c47d9/model.safetensors)
@@ -38,7 +44,7 @@ Table entries are mean NMSE at a budget of 2 bits/weight. Lower is better. The 4
 
 ## Measurement limits
 
-The experiment evaluates fixed generators and a single ordering heuristic on one checkpoint. Llama-2-7B remains untested because its original checkpoint was unavailable locally and the official download is gated. Weight NMSE and modeled payload sizes are the measured outcomes. The computational codebook follow-up below covers activation error, perplexity and local decoder cost. [Llama-2-7B access](https://huggingface.co/meta-llama/Llama-2-7b-hf)
+The experiment evaluates fixed generators and a single ordering heuristic on one checkpoint. At the time of this study, Llama-2-7B was unavailable locally. A [later Llama-2 reference follow-up](llama2-reference-followup/report.md) now evaluates its dense checkpoint, released QTIP HYB checkpoint and SmoothQuant controls. Weight NMSE and modeled payload sizes are the measured outcomes of this earlier study. The computational codebook follow-up below covers activation error, perplexity and local decoder cost.
 
 ## Computational codebook follow-up
 
