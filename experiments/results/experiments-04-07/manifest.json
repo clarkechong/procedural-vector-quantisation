@@ -1,0 +1,7 @@
+{
+  "token_pilot": "activation_ptq/pilot/manifest.json",
+  "mnist": "procedural_training/mnist_qat/manifest.json",
+  "fashion": "procedural_training/fashion_qat/manifest.json",
+  "blind_final_test": false,
+  "reason": "Experiment 01-03 already used local test rows/tokens"
+}

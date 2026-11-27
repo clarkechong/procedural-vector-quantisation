@@ -1,0 +1,27 @@
+{
+  "model": "SmolLM2-135M",
+  "layer": 15,
+  "projection": "down_proj",
+  "output_rows": [
+    0,
+    15
+  ],
+  "input_columns": [
+    0,
+    255
+  ],
+  "calibration_token_offsets": [
+    0,
+    511
+  ],
+  "validation_token_offsets": [
+    512,
+    1023
+  ],
+  "transform_seed": 20261127,
+  "block_size": 16,
+  "trellis_length": 256,
+  "rate": 2,
+  "normalization": "codebook RMS 1, matrix RMS frozen",
+  "note": "Local submatrix functional ablation; no full-model perplexity or QTIP kernel export"
+}

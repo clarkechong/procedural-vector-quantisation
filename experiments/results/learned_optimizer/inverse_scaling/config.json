@@ -1,0 +1,25 @@
+{
+  "widths": [
+    12,
+    16,
+    20
+  ],
+  "families": [
+    "bit_extract",
+    "linear_binary",
+    "hash32",
+    "random_explicit"
+  ],
+  "width": 16,
+  "train_count": 20000,
+  "test_count": 2000,
+  "oracle_count": 64,
+  "epochs": 10,
+  "noise": 0.25,
+  "device": "cuda",
+  "training_target": "planted seed, not nearest-codeword oracle",
+  "input_distribution": "sampled codeword plus IID Gaussian noise",
+  "candidate_rule": "threshold bit predictor plus one-bit neighborhood",
+  "model": "16-256-256-B ReLU",
+  "note": "Synthetic scaling pilot, not task-gradient inversion"
+}

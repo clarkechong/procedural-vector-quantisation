@@ -1,0 +1,18 @@
+{
+  "seed": 20261127,
+  "samples": 256,
+  "distribution": "IID standard Gaussian",
+  "dimension": 256,
+  "state_bits": 16,
+  "stride": 2,
+  "normalize_codebook_rms": true,
+  "codebooks": [
+    "3inst"
+  ],
+  "input_cast": "float16 before Viterbi, as pinned upstream",
+  "cost_dtype": "float32",
+  "algorithm": "pinned upstream two-pass midpoint overlap approximation",
+  "runtime_s": 54.36329386499983,
+  "source_commit": "e90c6688c8dfae326a3a81b5eb032db7c6680ec0",
+  "note": "Independent algorithm recreation; no direct tensor parity against upstream CUDA implementation"
+}

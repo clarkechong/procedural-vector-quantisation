@@ -1,0 +1,18 @@
+{
+  "seed": 20261127,
+  "model": "SmolLM2-135M",
+  "dtype": "bfloat16",
+  "dense_nll": 3.029346976693221,
+  "dense_ppl": 20.683721226220477,
+  "valid_targets": 508,
+  "input_channel_count": 1536,
+  "calibration_tokens": 512,
+  "validation_tokens": 512,
+  "epsilon": 1e-08,
+  "clip": [
+    0.0625,
+    16
+  ],
+  "runtime_s": 100.42250139300018,
+  "device": "cuda"
+}

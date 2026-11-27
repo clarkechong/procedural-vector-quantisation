@@ -1,0 +1,14 @@
+{
+  "dimension": 1536,
+  "calibration_tokens": 512,
+  "layer": 15,
+  "projection": "down_proj",
+  "hessian_diag_mean": 0.04119955175068217,
+  "rht_max_abs": 1.9984014443252818e-15,
+  "rht_orthogonality_max_abs": 7.2783553961564e-08,
+  "transformed_hessian_max_abs": 2.220446049250313e-16,
+  "block_ldl_reconstruction_max_abs": 3.677613769070831e-16,
+  "activation_sha256": "0e618a57091acb1af526e4f41e1fd9e53e0f0c555a08336d2cf6aa2f9aa973d4",
+  "upstream_commit": "e90c6688c8dfae326a3a81b5eb032db7c6680ec0",
+  "note": "Actual SmolLM2 activation Hessian, pinned upstream RHT source extracted without CUDA imports; no BlockLDLQ or full-model QTIP quantization"
+}

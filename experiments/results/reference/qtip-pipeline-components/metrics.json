@@ -1,0 +1,12 @@
+{
+  "hessian_max_abs": 1.4432899320127035e-15,
+  "rht_inverse_max_abs": 2.220446049250313e-15,
+  "transformed_hessian_max_abs": 9.992007221626409e-16,
+  "block_ldl_reconstruction_max_abs": 4.440892098500626e-16,
+  "upstream_L_max_abs": 0.0,
+  "upstream_D_max_abs": 0.0,
+  "dimension": 64,
+  "block": 16,
+  "calibration_vectors": 512,
+  "upstream_commit": "e90c6688c8dfae326a3a81b5eb032db7c6680ec0"
+}

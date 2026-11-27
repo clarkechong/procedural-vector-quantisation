@@ -1,0 +1,7 @@
+method,candidates,mean_regret,oracle_hit
+learned_top1+current,2,0.007402161601930857,0.9208
+learned_top4+current,5,2.4411496269749478e-05,0.9993
+learned_top16+current,17,0.0,1.0
+random16+current,17,0.7819321155548096,0.4297
+one_bit+current,9,0.7558372020721436,0.4311
+exact_nearest,256,0.0,1.0

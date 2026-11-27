@@ -1,0 +1,39 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+[
+  {
+    "method": "learned_top1+current",
+    "candidates": 2,
+    "mean_regret": 0.007402161601930857,
+    "oracle_hit": 0.9208
+  },
+  {
+    "method": "learned_top4+current",
+    "candidates": 5,
+    "mean_regret": 2.4411496269749478e-05,
+    "oracle_hit": 0.9993
+  },
+  {
+    "method": "learned_top16+current",
+    "candidates": 17,
+    "mean_regret": 0.0,
+    "oracle_hit": 1.0
+  },
+  {
+    "method": "random16+current",
+    "candidates": 17,
+    "mean_regret": 0.7819321155548096,
+    "oracle_hit": 0.4297
+  },
+  {
+    "method": "one_bit+current",
+    "candidates": 9,
+    "mean_regret": 0.7558372020721436,
+    "oracle_hit": 0.4311
+  },
+  {
+    "method": "exact_nearest",
+    "candidates": 256,
+    "mean_regret": 0.0,
+    "oracle_hit": 1.0
+  }
+]

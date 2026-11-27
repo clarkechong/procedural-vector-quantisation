@@ -1,0 +1,10 @@
+{
+  "plan_sha256": "de3c0ee4690a1633996b998f05b1e047219f0c2e16563105329c5e75afe46448",
+  "date_utc": "2026-11-27",
+  "phase": "bounded pilots and independent components",
+  "selection": "validation only; old test already seen",
+  "reference_source_roots": [
+    "/tmp/qtip-official",
+    "/tmp/smoothquant-official"
+  ]
+}

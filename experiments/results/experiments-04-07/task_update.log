@@ -1,0 +1,25 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/root/work/procedural-vector-quantisation/experiments/training/task_update_check.py:67: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  result=dict(initial_train_loss=float(train_loss),initial_holdout_loss=baseline_holdout,
+{
+  "initial_train_loss": 2.302320957183838,
+  "initial_holdout_loss": 2.3047986030578613,
+  "total_tiles": 58688,
+  "exact": {
+    "train_loss": 2.1964056491851807,
+    "holdout_loss": 2.2514808177948,
+    "changed_tiles": 4501
+  },
+  "learned_top4": {
+    "train_loss": 2.196410894393921,
+    "holdout_loss": 2.2514796257019043,
+    "changed_tiles": 4501
+  },
+  "one_bit": {
+    "train_loss": 2.2634615898132324,
+    "holdout_loss": 2.2803382873535156,
+    "changed_tiles": 593
+  },
+  "learned_exact_identical": false
+}

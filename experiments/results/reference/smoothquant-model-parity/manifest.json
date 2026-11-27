@@ -1,0 +1,13 @@
+{
+  "calibration_offsets": [
+    0,
+    127
+  ],
+  "evaluation_offsets": [
+    128,
+    255
+  ],
+  "split": "validation",
+  "alpha": 0.85,
+  "note": "SmolLM2 adaptation, not Llama-2-7B reference"
+}

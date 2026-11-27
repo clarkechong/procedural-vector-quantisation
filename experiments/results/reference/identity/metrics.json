@@ -1,0 +1,13 @@
+{
+  "tensor_equal": true,
+  "state_tensors": 273,
+  "serialized_bytes": 325683824,
+  "artifact_sha256": "de8360e16c540175a7386bf16a44f1ea6488e9d25d0bef2cc4fca93b55bbd4a0",
+  "max_logit_diff": 0.0,
+  "original_nll": 2.7024091585414616,
+  "restored_nll": 2.7024091585414616,
+  "valid_targets": 127,
+  "restored_targets": 127,
+  "context": 128,
+  "dtype": "bfloat16"
+}

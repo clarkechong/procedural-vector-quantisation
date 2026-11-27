@@ -1,0 +1,10 @@
+{
+  "trace_seed": 41,
+  "steps": 25,
+  "tiles_per_layer": 100,
+  "target_step_size": 10,
+  "training_optimizer": "shadow Adam 1e-3",
+  "device": "cuda",
+  "elapsed_seconds": 1.2952493729999333,
+  "inverse_source": "experiments/results/learned_optimizer/inverse_pilot/model.pt"
+}

@@ -1,0 +1,21 @@
+{
+  "date_utc": "2026-11-27",
+  "python": "3.12.3",
+  "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+  "torch": "2.9.1+rocm6.4",
+  "hip": "6.4.43484-123eb5128",
+  "triton": "3.5.1",
+  "numpy": "2.5.5",
+  "gpu_name": "AMD Radeon Graphics",
+  "gpu_arch": "gfx942:sramecc+:xnack-",
+  "gpu_memory_bytes": 205822885888,
+  "cpu_ram_bytes": 253347020800,
+  "main_repo_commit": "9043d854498a95c33e0fb254e0a1bfd02faf9cd4",
+  "qtip_upstream_commit": "e90c6688c8dfae326a3a81b5eb032db7c6680ec0",
+  "smoothquant_upstream_commit": "c61476d728e42ae0d8a35e7e78494edcac3237b5",
+  "checkpoint_sha256": "80521b40281d6ce74e35c9282c22539e75aa0ac8578892b2a59955ef78d55da1",
+  "tokenizer_sha256": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+  "qtip_codebook_source_sha256": "a299ae97d2ccc80a142095c3c16ed619b435b68736fd52702ab396bc37218531",
+  "smoothquant_transform_source_sha256": "74daf140e0efd00082ec536200aa1d18d7b1ca516b6aa70a3cb96439f4d4e88b",
+  "smoothquant_evaluator_source_sha256": "caf456b6676578b9b1791bf845a20e4eed8c750fb439b07fb70c872b858da79e"
+}

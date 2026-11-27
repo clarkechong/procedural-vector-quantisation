@@ -1,0 +1,9 @@
+{
+  "seed": 20261127,
+  "samples": 256,
+  "distribution": "IID standard normal",
+  "boundary": "open",
+  "scale": "fixed upstream normalization",
+  "runtime_s": 51.59884975700015,
+  "note": "Small component pilot; paper Table 1 uses its own boundary and scale conventions"
+}

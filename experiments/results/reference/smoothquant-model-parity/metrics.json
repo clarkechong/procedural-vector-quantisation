@@ -1,0 +1,12 @@
+{
+  "model": "SmolLM2-135M",
+  "dtype": "float32",
+  "device": "cuda",
+  "activation_scale_arrays": 60,
+  "calibration_tokens": 128,
+  "evaluation_tokens": 128,
+  "max_logit_diff": 0.00013828277587890625,
+  "mean_logit_diff": 1.0167554137296975e-05,
+  "original_nll": 2.5161917209625244,
+  "transformed_nll": 2.516191244125366
+}

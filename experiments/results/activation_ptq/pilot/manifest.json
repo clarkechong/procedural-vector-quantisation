@@ -1,0 +1,15 @@
+{
+  "dataset": "local WikiText-2 validation parquet",
+  "calibration_token_offsets": [
+    0,
+    511
+  ],
+  "validation_token_offsets": [
+    512,
+    1023
+  ],
+  "layer": 15,
+  "projection": "down_proj",
+  "context": 128,
+  "note": "Adaptation pilot; validation is not a blind final-test set"
+}
