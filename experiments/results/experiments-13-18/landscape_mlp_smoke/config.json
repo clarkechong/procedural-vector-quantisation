@@ -1,0 +1,27 @@
+{
+  "seeds": [
+    11
+  ],
+  "epochs": 2,
+  "switch_epoch": 1,
+  "release_epochs": 2,
+  "architecture": [
+    784,
+    256,
+    128,
+    10
+  ],
+  "optimizer": "Adam, lr=0.001, reset at transition/release",
+  "batch_size": 256,
+  "scales": "frozen layer RMS at paired dense W0",
+  "scratch_methods": [
+    "dense",
+    "scalar2",
+    "mul120_2bpw",
+    "dense_projected"
+  ],
+  "validation": "exposed 5k training holdout",
+  "checkpoint_dir": "runs/experiments-13-18/landscape_mlp",
+  "torch": "2.9.1+rocm6.4",
+  "hip": "6.4.43484-123eb5128"
+}

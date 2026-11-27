@@ -1,0 +1,16 @@
+{
+  "baseline_nll": 3.480887345441683,
+  "scored_targets": 254,
+  "context": 128,
+  "windows": 2,
+  "layers": [
+    1,
+    2,
+    11,
+    28
+  ],
+  "checkpoint_sha256": "80521b40281d6ce74e35c9282c22539e75aa0ac8578892b2a59955ef78d55da1",
+  "quantizer": "one FP32 scale per matrix, odd signed 8-bit levels, 50 coordinate-descent updates",
+  "torch": "2.9.1+rocm6.4",
+  "hip": "6.4.43484-123eb5128"
+}

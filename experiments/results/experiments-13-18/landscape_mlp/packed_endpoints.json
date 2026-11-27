@@ -1,0 +1,62 @@
+[
+  {
+    "seed": 11,
+    "method": "scalar2",
+    "packed_bytes": 60282,
+    "projection_bpw": 2.0,
+    "total_bits_per_original_weight": 2.0543211559432932,
+    "max_logit_error": 6.67572021484375e-06,
+    "max_weight_error": 7.450580596923828e-09,
+    "format": "MLPQ v1, 6-byte header, FP32 scale per layer, FP32 biases, 2-bit scalar or 8-bit seed per four weights"
+  },
+  {
+    "seed": 11,
+    "method": "mul120_2bpw",
+    "packed_bytes": 60282,
+    "projection_bpw": 2.0,
+    "total_bits_per_original_weight": 2.0543211559432932,
+    "max_logit_error": 3.814697265625e-06,
+    "max_weight_error": 7.450580596923828e-09,
+    "format": "MLPQ v1, 6-byte header, FP32 scale per layer, FP32 biases, 2-bit scalar or 8-bit seed per four weights"
+  },
+  {
+    "seed": 17,
+    "method": "scalar2",
+    "packed_bytes": 60282,
+    "projection_bpw": 2.0,
+    "total_bits_per_original_weight": 2.0543211559432932,
+    "max_logit_error": 8.58306884765625e-06,
+    "max_weight_error": 3.725290298461914e-09,
+    "format": "MLPQ v1, 6-byte header, FP32 scale per layer, FP32 biases, 2-bit scalar or 8-bit seed per four weights"
+  },
+  {
+    "seed": 17,
+    "method": "mul120_2bpw",
+    "packed_bytes": 60282,
+    "projection_bpw": 2.0,
+    "total_bits_per_original_weight": 2.0543211559432932,
+    "max_logit_error": 4.76837158203125e-06,
+    "max_weight_error": 7.450580596923828e-09,
+    "format": "MLPQ v1, 6-byte header, FP32 scale per layer, FP32 biases, 2-bit scalar or 8-bit seed per four weights"
+  },
+  {
+    "seed": 23,
+    "method": "scalar2",
+    "packed_bytes": 60282,
+    "projection_bpw": 2.0,
+    "total_bits_per_original_weight": 2.0543211559432932,
+    "max_logit_error": 7.62939453125e-06,
+    "max_weight_error": 1.862645149230957e-09,
+    "format": "MLPQ v1, 6-byte header, FP32 scale per layer, FP32 biases, 2-bit scalar or 8-bit seed per four weights"
+  },
+  {
+    "seed": 23,
+    "method": "mul120_2bpw",
+    "packed_bytes": 60282,
+    "projection_bpw": 2.0,
+    "total_bits_per_original_weight": 2.0543211559432932,
+    "max_logit_error": 4.76837158203125e-06,
+    "max_weight_error": 3.725290298461914e-09,
+    "format": "MLPQ v1, 6-byte header, FP32 scale per layer, FP32 biases, 2-bit scalar or 8-bit seed per four weights"
+  }
+]

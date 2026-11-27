@@ -1,0 +1,13 @@
+{
+  "seeds": [
+    11,
+    17,
+    23
+  ],
+  "independent_seed_offset": 10000,
+  "epochs": 20,
+  "batch_size": 256,
+  "optimizer": "Adam lr 0.001",
+  "split": "same exposed validation",
+  "alignment": "incoming-row cosine Hungarian, legal ReLU permutations"
+}

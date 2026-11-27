@@ -1,0 +1,10 @@
+{
+  "levels": [
+    -3,
+    -1,
+    1,
+    3
+  ],
+  "scale": "shared per matrix, three alternating passes",
+  "packing": "low-bit first, byte-aligned rows"
+}

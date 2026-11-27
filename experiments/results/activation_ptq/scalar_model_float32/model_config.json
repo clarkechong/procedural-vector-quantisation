@@ -1,0 +1,25 @@
+{
+  "context": 128,
+  "calibration_tokens": 0,
+  "inputs": 128,
+  "available_inputs": 128,
+  "windows": 0,
+  "bos": null,
+  "device": "cuda",
+  "dtype": "float32",
+  "model_parameters": 134515008,
+  "candidates": null,
+  "shortlist": 0,
+  "indexed_neighborhood": null,
+  "sources": {
+    "smollm2-135m.safetensors": "80521b40281d6ce74e35c9282c22539e75aa0ac8578892b2a59955ef78d55da1",
+    "config.json": "5ede75f619ec546ef29867b3fe62cfec35c039f26c4994ff7e453153e65a544e",
+    "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+    "test-00000-of-00001.parquet": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91"
+  },
+  "torch": "2.9.1+rocm6.4",
+  "numpy": "2.5.5",
+  "codec": "four uniform symmetric levels -3,-1,1,3",
+  "scale": "one fitted float32 per matrix, three alternating passes",
+  "packing": "two bits per weight, byte-aligned rows"
+}

@@ -1,0 +1,7 @@
+family,alpha,left,right,code_fraction_equal,max_weight_difference
+scalar2,0.0,A,B,1.0,0.0
+scalar2,0.0,C,D,1.0,0.0
+scalar2,1.0,B,D,0.37263093171296297,1.7530391216278076
+mul120,0.0,A,B,1.0,0.0
+mul120,0.0,C,D,1.0,0.0
+mul120,1.0,B,D,0.052815755208333336,32.812705993652344

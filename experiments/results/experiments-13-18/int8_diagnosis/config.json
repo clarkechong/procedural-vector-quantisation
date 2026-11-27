@@ -1,0 +1,16 @@
+{
+  "checkpoint": "data/smollm2-135m.safetensors",
+  "layers": [
+    0,
+    12,
+    17
+  ],
+  "projection_types": [
+    "q_proj",
+    "k_proj",
+    "o_proj",
+    "down_proj"
+  ],
+  "precision": "source BF16 converted to FP32; encoding and dequantization FP32",
+  "notes": "Same 8-bit payload throughout; row scales cost 32 bits per output row."
+}

@@ -1,0 +1,16 @@
+{
+  "bits": 4,
+  "blocks": 128,
+  "seed_tile": 1024,
+  "block_tile": 32,
+  "gpu_seconds": 0.9072746410001855,
+  "cpu_seconds": 0.041526290000547306,
+  "gpu_blocks_per_second": 141.08186674201755,
+  "gpu_peak_allocated_bytes": 96998400,
+  "field_mismatches": 0,
+  "max_excess_error": 0.0,
+  "mean_excess_error": 0.0,
+  "torch": "2.9.1+rocm6.4",
+  "hip": "6.4.43484-123eb5128",
+  "source": "Llama-2-7B layer 0 q_proj contiguous blocks; all 65535 legal seeds"
+}
