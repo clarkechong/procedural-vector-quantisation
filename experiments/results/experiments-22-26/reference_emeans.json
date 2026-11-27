@@ -1,0 +1,73 @@
+{
+  "source": "/tmp/faiss-emeans",
+  "seed": 22,
+  "n": 4096,
+  "test_n": 1024,
+  "d": 32,
+  "k": 32,
+  "epochs": 3,
+  "threads": 8,
+  "official_recipe": {
+    "name": "canonical_v1",
+    "batch_law": "throughput",
+    "batch_law_requested": "auto",
+    "batch_law_reason": "d > 16",
+    "batch_size": 256,
+    "batch_size_requested": null,
+    "alpha0": 0.5176991568476419,
+    "alpha0_source": "step_law",
+    "nepochs": 3,
+    "steps_per_pass": 16,
+    "total_steps": 48,
+    "epoch_rows": [
+      4096,
+      4096,
+      4096
+    ],
+    "epoch_steps": [
+      16,
+      16,
+      16
+    ],
+    "tail_policy": "keep",
+    "alpha_min_factor": 0.1,
+    "check_unused_every": 5,
+    "unused_threshold": null,
+    "init_usage": 1.52587890625e-05,
+    "seed": 22,
+    "backend": "torch",
+    "assignment_chunk_size": 8192,
+    "assignment_backend": "native",
+    "assignment_backend_requested": "auto",
+    "device": "cpu",
+    "centroid_chunk_size": 4096,
+    "representation": "float32",
+    "closing_handover": "second_nearest"
+  },
+  "official_cpu": {
+    "elapsed_s": 0.09116782999990392,
+    "heldout_loss": 15.78216542084148,
+    "exact_assignment_agreement": 1.0,
+    "unused_clusters": 0
+  },
+  "lloyd_cpu": {
+    "heldout_loss": 49.22824478149414,
+    "trace": [
+      {
+        "epoch": 1,
+        "train_loss": 128.36270141601562,
+        "elapsed_s": 0.010653880999598186
+      },
+      {
+        "epoch": 2,
+        "train_loss": 61.09071350097656,
+        "elapsed_s": 0.019991165998362703
+      },
+      {
+        "epoch": 3,
+        "train_loss": 52.003990173339844,
+        "elapsed_s": 0.028041639998264145
+      }
+    ]
+  }
+}

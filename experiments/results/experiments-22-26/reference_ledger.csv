@@ -1,0 +1,4 @@
+source,revision,status,use
+facebookresearch/faiss contrib/e_means,b14b3d693161c7b1cbc5f2e398c8234b42b04c8b,official CPU component executed,synthetic and mask windows
+/root/work/sparse-2-4,96bc7dba211a7bc7b15a21de2a52d2c189e2144b,capture and FFN parity checked,ProSparse layer15
+SparseLLM/prosparse-llama-2-7b,5197d09bdea44d572a69330bf12db47f2c90e061,historical captures only,layer15

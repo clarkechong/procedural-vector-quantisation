@@ -1,0 +1,100 @@
+{
+  "g8_b16": {
+    "windows": 18,
+    "documents": 8,
+    "original": 198132,
+    "best_refined": 197583,
+    "best_practical": 197727,
+    "lower_bound": 191369,
+    "reduction": 0.0027708800193809724,
+    "max_reduction_bound": 0.03413380978337677,
+    "bootstrap_95": [
+      0.0011412543577746792,
+      0.004923359724605843
+    ]
+  },
+  "g8_b32": {
+    "windows": 18,
+    "documents": 8,
+    "original": 99072,
+    "best_refined": 99021,
+    "best_practical": 99040,
+    "lower_bound": 98795,
+    "reduction": 0.0005147771317829397,
+    "max_reduction_bound": 0.002795946382428971,
+    "bootstrap_95": [
+      7.267441860470125e-05,
+      0.0011811864098836716
+    ]
+  },
+  "g16_b16": {
+    "windows": 18,
+    "documents": 8,
+    "original": 99072,
+    "best_refined": 99021,
+    "best_practical": 99021,
+    "lower_bound": 97507,
+    "reduction": 0.0005147771317829397,
+    "max_reduction_bound": 0.015796592377260943,
+    "bootstrap_95": [
+      0.0002624354005168472,
+      0.0008305647840531893
+    ]
+  },
+  "g16_b32": {
+    "windows": 18,
+    "documents": 8,
+    "original": 49536,
+    "best_refined": 49533,
+    "best_practical": 49533,
+    "lower_bound": 49520,
+    "reduction": 6.05620155038622e-05,
+    "max_reduction_bound": 0.0003229974160207094,
+    "bootstrap_95": [
+      0.0,
+      0.00016351744186049455
+    ]
+  },
+  "g4_b8": {
+    "windows": 18,
+    "documents": 8,
+    "original": 776674,
+    "best_refined": 760351,
+    "best_practical": 766204,
+    "lower_bound": 646872,
+    "reduction": 0.02101653975799367,
+    "max_reduction_bound": 0.1671254606179684,
+    "bootstrap_95": [
+      0.014315737540141756,
+      0.026775134319060312
+    ]
+  },
+  "g4_b16": {
+    "windows": 18,
+    "documents": 8,
+    "original": 395835,
+    "best_refined": 392746,
+    "best_practical": 393705,
+    "lower_bound": 377661,
+    "reduction": 0.007803756615761603,
+    "max_reduction_bound": 0.04591306983970589,
+    "bootstrap_95": [
+      0.003738177430433201,
+      0.011986729218300851
+    ]
+  },
+  "g8_b8": {
+    "windows": 18,
+    "documents": 8,
+    "original": 395107,
+    "best_refined": 390814,
+    "best_practical": 392002,
+    "lower_bound": 329577,
+    "reduction": 0.010865411141791959,
+    "max_reduction_bound": 0.16585380669033956,
+    "bootstrap_95": [
+      0.005899408582794927,
+      0.016574848909892914
+    ]
+  }
+}

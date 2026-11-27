@@ -1,0 +1,12 @@
+{
+  "date_utc": "2026-11-27",
+  "python": "3.13.18 (main, Nov 24 2026, 16:58:49) [Clang 23.1.3 ]",
+  "torch": "2.9.1+rocm6.4",
+  "device_visible_in_sandbox": false,
+  "host_gpu_check": "MI300X GPU parity check via escalated execution",
+  "procedural_repo_revision": "9043d854498a95c33e0fb254e0a1bfd02faf9cd4",
+  "prosparse_repo_revision": "96bc7dba211a7bc7b15a21de2a52d2c189e2144b",
+  "faiss_emeans_revision": "b14b3d693161c7b1cbc5f2e398c8234b42b04c8b",
+  "prosparse_checkpoint_revision": "5197d09bdea44d572a69330bf12db47f2c90e061",
+  "dataset_revision": "1588ec454efa1a09f29cd18ddd04fe05fc8653a2"
+}

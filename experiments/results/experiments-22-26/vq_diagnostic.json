@@ -1,0 +1,27 @@
+{
+  "source": "ProSparse layer15 down_proj FP16, distinct output-row halves",
+  "weight_sha256": "ce903c9c4aa1f29c18b567dca43d944de7070da4f4da279f63e35934497d5f1c",
+  "train_rows": "0:2048",
+  "test_rows": "2048:4096",
+  "train_tiles_sampled": 16384,
+  "test_tiles_sampled": 4096,
+  "d": 4,
+  "k": 256,
+  "scale": 0.01792777329683304,
+  "nominal_index_bpw": 2.0,
+  "table_bits_fp16": 16384,
+  "methods": {
+    "official_emeans": {
+      "seconds": 0.35916574799921364,
+      "test_nmse": 0.10186686196171707,
+      "test_nmse_fp16_table": 0.10186585370042918,
+      "occupied_test_codes": 255
+    },
+    "lloyd": {
+      "seconds": 0.08157289199880324,
+      "test_nmse": 0.10350016677617715,
+      "test_nmse_fp16_table": 0.10349869817142168,
+      "occupied_test_codes": 255
+    }
+  }
+}

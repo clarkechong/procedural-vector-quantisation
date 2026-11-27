@@ -1,0 +1,266 @@
+[
+  {
+    "doc": 64,
+    "path": "/root/work/sparse-2-4/data/activations/doc_0064.npy",
+    "sha256": "8262b7da9dd49e171ac45f0645bbb29fef8820a3c86cec2e2e4c4753f0329907",
+    "tokens": 59,
+    "metadata": {
+      "document_id": 64,
+      "source_text_sha256": "adba89f663e77c8f65e92a486826df6a615f2b9cff67116b01b4154913a78df7",
+      "source_jsonl": "data/c4.jsonl",
+      "token_count": 59,
+      "sequence_length": 512,
+      "model": "SparseLLM/prosparse-llama-2-7b",
+      "revision": "5197d09bdea44d572a69330bf12db47f2c90e061",
+      "layer": 15,
+      "input_dtype": "torch.float16",
+      "output_dtype": "torch.float16",
+      "token_positions": [
+        0,
+        58
+      ]
+    }
+  },
+  {
+    "doc": 65,
+    "path": "/root/work/sparse-2-4/data/activations/doc_0065.npy",
+    "sha256": "f9fd5d52969273f39e5e5ca084756b37d2004c0f402ee64a6d9040d0a3d7d3d2",
+    "tokens": 213,
+    "metadata": {
+      "document_id": 65,
+      "source_text_sha256": "0fbf1041ea588ed671c6f124821d6867ec3059d19b5507b7a5034e12ca6cae2c",
+      "source_jsonl": "data/c4.jsonl",
+      "token_count": 213,
+      "sequence_length": 512,
+      "model": "SparseLLM/prosparse-llama-2-7b",
+      "revision": "5197d09bdea44d572a69330bf12db47f2c90e061",
+      "layer": 15,
+      "input_dtype": "torch.float16",
+      "output_dtype": "torch.float16",
+      "token_positions": [
+        0,
+        212
+      ]
+    }
+  },
+  {
+    "doc": 66,
+    "path": "/root/work/sparse-2-4/data/activations/doc_0066.npy",
+    "sha256": "8adf9dd36d0b6997b70f18dfbec3c81535af939ed6bffcfbb4444c3794d876cf",
+    "tokens": 36,
+    "metadata": {
+      "document_id": 66,
+      "source_text_sha256": "710e286379178b092a1bb47d70d004a82c7cb76b70e4638468606f479c383505",
+      "source_jsonl": "data/c4.jsonl",
+      "token_count": 36,
+      "sequence_length": 512,
+      "model": "SparseLLM/prosparse-llama-2-7b",
+      "revision": "5197d09bdea44d572a69330bf12db47f2c90e061",
+      "layer": 15,
+      "input_dtype": "torch.float16",
+      "output_dtype": "torch.float16",
+      "token_positions": [
+        0,
+        35
+      ]
+    }
+  },
+  {
+    "doc": 67,
+    "path": "/root/work/sparse-2-4/data/activations/doc_0067.npy",
+    "sha256": "0bd19839dfb6fbc535193f7f373e8b7d0f37cf8b7dec76c5db88d501bd5e52aa",
+    "tokens": 512,
+    "metadata": {
+      "document_id": 67,
+      "source_text_sha256": "f5d3545223ce9e7826bf3cf09255e2631f54503482a8d0275c7b6a60c0f51452",
+      "source_jsonl": "data/c4.jsonl",
+      "token_count": 512,
+      "sequence_length": 512,
+      "model": "SparseLLM/prosparse-llama-2-7b",
+      "revision": "5197d09bdea44d572a69330bf12db47f2c90e061",
+      "layer": 15,
+      "input_dtype": "torch.float16",
+      "output_dtype": "torch.float16",
+      "token_positions": [
+        0,
+        511
+      ]
+    }
+  },
+  {
+    "doc": 68,
+    "path": "/root/work/sparse-2-4/data/activations/doc_0068.npy",
+    "sha256": "a2d2fc2f9c6eed7c7f2998815caacb0476286e61982e227172e81d7cfbf16077",
+    "tokens": 406,
+    "metadata": {
+      "document_id": 68,
+      "source_text_sha256": "3e51a29d22c53d78f27a1eb7da597581fe4311c08165c6057bb9804cac5b7267",
+      "source_jsonl": "data/c4.jsonl",
+      "token_count": 406,
+      "sequence_length": 512,
+      "model": "SparseLLM/prosparse-llama-2-7b",
+      "revision": "5197d09bdea44d572a69330bf12db47f2c90e061",
+      "layer": 15,
+      "input_dtype": "torch.float16",
+      "output_dtype": "torch.float16",
+      "token_positions": [
+        0,
+        405
+      ]
+    }
+  },
+  {
+    "doc": 69,
+    "path": "/root/work/sparse-2-4/data/activations/doc_0069.npy",
+    "sha256": "bba573c000f6ead11785af0a75030f1a2e0f9dd7630d797709606c607fb96b3a",
+    "tokens": 512,
+    "metadata": {
+      "document_id": 69,
+      "source_text_sha256": "4006fd9bd3bca54cc5d1f9b7431b85f9f1dbdaeb4c8a87077857d7215112358b",
+      "source_jsonl": "data/c4.jsonl",
+      "token_count": 512,
+      "sequence_length": 512,
+      "model": "SparseLLM/prosparse-llama-2-7b",
+      "revision": "5197d09bdea44d572a69330bf12db47f2c90e061",
+      "layer": 15,
+      "input_dtype": "torch.float16",
+      "output_dtype": "torch.float16",
+      "token_positions": [
+        0,
+        511
+      ]
+    }
+  },
+  {
+    "doc": 70,
+    "path": "/root/work/sparse-2-4/data/activations/doc_0070.npy",
+    "sha256": "94654c963a3d4dab8315e9445b4e732ce3b8758ab560fb148b47245a7ae861ad",
+    "tokens": 140,
+    "metadata": {
+      "document_id": 70,
+      "source_text_sha256": "8a786f6002d0cabe1cf1146b7df451d4ac08eb3f3263bedb6cb71c279d326cb1",
+      "source_jsonl": "data/c4.jsonl",
+      "token_count": 140,
+      "sequence_length": 512,
+      "model": "SparseLLM/prosparse-llama-2-7b",
+      "revision": "5197d09bdea44d572a69330bf12db47f2c90e061",
+      "layer": 15,
+      "input_dtype": "torch.float16",
+      "output_dtype": "torch.float16",
+      "token_positions": [
+        0,
+        139
+      ]
+    }
+  },
+  {
+    "doc": 71,
+    "path": "/root/work/sparse-2-4/data/activations/doc_0071.npy",
+    "sha256": "99917f3d52fc82ce1093c4ffd771ae2aa16c37a03bb66bb672c7d4e8688cc5c9",
+    "tokens": 52,
+    "metadata": {
+      "document_id": 71,
+      "source_text_sha256": "616ed014192b5b15988d8d6af4005451c7c1105b3408d3fe2065988cb5c7bdc4",
+      "source_jsonl": "data/c4.jsonl",
+      "token_count": 52,
+      "sequence_length": 512,
+      "model": "SparseLLM/prosparse-llama-2-7b",
+      "revision": "5197d09bdea44d572a69330bf12db47f2c90e061",
+      "layer": 15,
+      "input_dtype": "torch.float16",
+      "output_dtype": "torch.float16",
+      "token_positions": [
+        0,
+        51
+      ]
+    }
+  },
+  {
+    "doc": 72,
+    "path": "/root/work/sparse-2-4/data/activations/doc_0072.npy",
+    "sha256": "975ea97f4e91433e268187dad40f9a90755bf176ef7a2c979edbd895b6b622a9",
+    "tokens": 344,
+    "metadata": {
+      "document_id": 72,
+      "source_text_sha256": "0e44fa8daeb3ea4493c0d9dc942100de39b0e24720d28de9716229960c8fc2d2",
+      "source_jsonl": "data/c4.jsonl",
+      "token_count": 344,
+      "sequence_length": 512,
+      "model": "SparseLLM/prosparse-llama-2-7b",
+      "revision": "5197d09bdea44d572a69330bf12db47f2c90e061",
+      "layer": 15,
+      "input_dtype": "torch.float16",
+      "output_dtype": "torch.float16",
+      "token_positions": [
+        0,
+        343
+      ]
+    }
+  },
+  {
+    "doc": 73,
+    "path": "/root/work/sparse-2-4/data/activations/doc_0073.npy",
+    "sha256": "86e5794ac3a646df2a3dad0abbe84d2465c30df7e5e7e988ae6d470efeb7a84c",
+    "tokens": 377,
+    "metadata": {
+      "document_id": 73,
+      "source_text_sha256": "8d5283881cc207e47036f6dc3c1ae12415639f737c3d9756a38cbde160f9c39b",
+      "source_jsonl": "data/c4.jsonl",
+      "token_count": 377,
+      "sequence_length": 512,
+      "model": "SparseLLM/prosparse-llama-2-7b",
+      "revision": "5197d09bdea44d572a69330bf12db47f2c90e061",
+      "layer": 15,
+      "input_dtype": "torch.float16",
+      "output_dtype": "torch.float16",
+      "token_positions": [
+        0,
+        376
+      ]
+    }
+  },
+  {
+    "doc": 74,
+    "path": "/root/work/sparse-2-4/data/activations/doc_0074.npy",
+    "sha256": "eece987a1a8dd31e108e50df411ba2f7a8e93804b1593368b34fd0af290b173c",
+    "tokens": 105,
+    "metadata": {
+      "document_id": 74,
+      "source_text_sha256": "963262353a8bcd3569d4a1029e15a2721f60bcba0ade321e8a44406bebfa9391",
+      "source_jsonl": "data/c4.jsonl",
+      "token_count": 105,
+      "sequence_length": 512,
+      "model": "SparseLLM/prosparse-llama-2-7b",
+      "revision": "5197d09bdea44d572a69330bf12db47f2c90e061",
+      "layer": 15,
+      "input_dtype": "torch.float16",
+      "output_dtype": "torch.float16",
+      "token_positions": [
+        0,
+        104
+      ]
+    }
+  },
+  {
+    "doc": 75,
+    "path": "/root/work/sparse-2-4/data/activations/doc_0075.npy",
+    "sha256": "cb7705be8de08fde4aef07a0bb402cd97ab91bdd9891e29cb2380564735e1feb",
+    "tokens": 144,
+    "metadata": {
+      "document_id": 75,
+      "source_text_sha256": "563be31ddb595940e41edd05dd44468c7a52da304867451da19dea69705b0d5c",
+      "source_jsonl": "data/c4.jsonl",
+      "token_count": 144,
+      "sequence_length": 512,
+      "model": "SparseLLM/prosparse-llama-2-7b",
+      "revision": "5197d09bdea44d572a69330bf12db47f2c90e061",
+      "layer": 15,
+      "input_dtype": "torch.float16",
+      "output_dtype": "torch.float16",
+      "token_positions": [
+        0,
+        143
+      ]
+    }
+  }
+]
