@@ -1,0 +1,87 @@
+{
+  "geometry_score_spearman": {
+    "coord_rms_cv": {
+      "all": 0.3883441219020825,
+      "top_decile": -0.3468117949187203
+    },
+    "coord_zero_fraction": {
+      "all": -0.1575228710601527,
+      "top_decile": -0.09335625472958656
+    },
+    "covariance_condition": {
+      "all": -0.6637331619576945,
+      "top_decile": 0.4534937939893604
+    },
+    "avalanche_mean_l2": {
+      "all": -0.9081883149731375,
+      "top_decile": -0.43290324187180046
+    },
+    "avalanche_cv": {
+      "all": 0.6380269668169313,
+      "top_decile": 0.6132568496308736
+    }
+  },
+  "winner_geometry": {
+    "experiment_01_winner": {
+      "coord_rms_cv": 0.2987599494736706,
+      "coord_zero_fraction": 0.4287109375,
+      "covariance_condition": 5.054507390393567,
+      "covariance_eigenvalues": [
+        1086.858044345181,
+        1619.9932281484662,
+        2501.3955186486846,
+        5493.532017451417
+      ],
+      "avalanche_mean_l2": 81.63161235017088,
+      "avalanche_cv": 0.6643776151081721
+    },
+    "optimized_two_op": {
+      "coord_rms_cv": 0.02530265509437041,
+      "coord_zero_fraction": 0.0830078125,
+      "covariance_condition": 1.586889764832981,
+      "covariance_eigenvalues": [
+        4042.8167333579245,
+        5072.075523293838,
+        5950.85324808704,
+        6415.504495261197
+      ],
+      "avalanche_mean_l2": 98.30960552098452,
+      "avalanche_cv": 0.3336408312985211
+    },
+    "guided_three_op": {
+      "coord_rms_cv": 0.0,
+      "coord_zero_fraction": 0.03125,
+      "covariance_condition": 1.132296606440152,
+      "covariance_eigenvalues": [
+        5102.479630244335,
+        5271.5205746217325,
+        5672.479425378266,
+        5777.520369755662
+      ],
+      "avalanche_mean_l2": 148.14830442322446,
+      "avalanche_cv": 0.2507583650190192
+    },
+    "guided_five_op": {
+      "coord_rms_cv": 0.0005491155533309482,
+      "coord_zero_fraction": 0.0078125,
+      "covariance_condition": 1.132296606440152,
+      "covariance_eigenvalues": [
+        5102.479630244335,
+        5271.5205746217325,
+        5672.479425378266,
+        5777.520369755662
+      ],
+      "avalanche_mean_l2": 148.14830442322446,
+      "avalanche_cv": 0.2507583650190192
+    }
+  },
+  "paired_final_difference": {
+    "five_op_minus_scalar_nmse": -0.016138020577898236,
+    "tile_bootstrap_95_percent_interval": [
+      -0.019688485472476636,
+      -0.012461032147057774
+    ],
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 2602
+  }
+}

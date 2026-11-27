@@ -1,0 +1,16 @@
+{
+  "one_instruction_distinct": 142,
+  "kept_one_instruction_prefixes": 24,
+  "two_instruction_syntactic_trials": 2352,
+  "two_instruction_distinct_scored": 1565,
+  "guided_best": {
+    "program": "r0=SHL(s, i); r1=SHL(r0, i)",
+    "calibration_nmse": 0.2109533450898706
+  },
+  "exhaustive_best": {
+    "program": "r0=ADD(i, i); r1=SHL(s, r0)",
+    "calibration_nmse": 0.2109533450898706
+  },
+  "gap_nmse": 0.0,
+  "note": "All distinct one-op prefixes were scored; only their best 24 were expanded. The exhaustive comparator uses the same fitted-scale procedure."
+}

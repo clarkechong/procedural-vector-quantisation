@@ -1,0 +1,81 @@
+{
+  "method": "24-wide beam from optimized two-op programs plus hand-inserted scalar-extraction prefix; 1024-tile screen, top-96 full calibration rerank",
+  "coverage": [
+    {
+      "instructions": 3,
+      "incoming_beam": 25,
+      "choices_per_prefix": 242,
+      "syntactic_trials": 6050,
+      "new_distinct_codebooks": 3931,
+      "full_calibration_reranked": 96
+    },
+    {
+      "instructions": 4,
+      "incoming_beam": 24,
+      "choices_per_prefix": 255,
+      "syntactic_trials": 6120,
+      "new_distinct_codebooks": 3621,
+      "full_calibration_reranked": 96
+    },
+    {
+      "instructions": 5,
+      "incoming_beam": 24,
+      "choices_per_prefix": 268,
+      "syntactic_trials": 6432,
+      "new_distinct_codebooks": 2206,
+      "full_calibration_reranked": 96
+    },
+    {
+      "instructions": 6,
+      "incoming_beam": 24,
+      "choices_per_prefix": 281,
+      "syntactic_trials": 6744,
+      "new_distinct_codebooks": 2838,
+      "full_calibration_reranked": 96
+    }
+  ],
+  "winners": [
+    {
+      "program": "r0=SHR(s, i); r1=MUL(r0, 0xf); r2=MUL(r1, 0x8)",
+      "length": 3,
+      "screen_nmse": 0.18392706411137125,
+      "screen_scale": 0.0029685257468372583,
+      "calibration_nmse": 0.19479254999401874,
+      "scale": 0.0038027623668313026,
+      "heldout_nmse": 0.19544130061980683,
+      "final_nmse": 0.18083196666094767
+    },
+    {
+      "program": "r0=SHR(s, i); r1=MUL(r0, 0xf); r2=MUL(r1, 0x8); r3=ADD(i, r2)",
+      "length": 4,
+      "screen_nmse": 0.18350331982266677,
+      "screen_scale": 0.002960742451250553,
+      "calibration_nmse": 0.19435860639433042,
+      "scale": 0.003808298148214817,
+      "heldout_nmse": 0.1950207175284039,
+      "final_nmse": 0.1806187189144091
+    },
+    {
+      "program": "r0=SHR(s, i); r1=MUL(r0, 0xf); r2=MUL(r1, 0x8); r3=ADD(i, r2); r4=ADD(i, r3)",
+      "length": 5,
+      "screen_nmse": 0.18336111995737067,
+      "screen_scale": 0.0029525677673518658,
+      "calibration_nmse": 0.19420266648972118,
+      "scale": 0.0038034399040043354,
+      "heldout_nmse": 0.19483369554391122,
+      "final_nmse": 0.1805760680383604
+    },
+    {
+      "program": "r0=SHR(s, i); r1=MUL(r0, 0xf); r2=MUL(r1, 0x8); r3=ADD(i, r2); r4=ADD(i, r3); r5=ADD(r4, 0x4)",
+      "length": 6,
+      "screen_nmse": 0.1815565075931966,
+      "screen_scale": 0.002987051848322153,
+      "calibration_nmse": 0.1942398628014796,
+      "scale": 0.0037772662471979856,
+      "heldout_nmse": 0.1958280031131976,
+      "final_nmse": 0.1818272874689223
+    }
+  ],
+  "elapsed_seconds": 13.711871367999265,
+  "limits": "Nonexhaustive; beam and screening can miss better programs; fixed signed-byte output cannot itself perform FP16 LUT4."
+}

@@ -8,6 +8,7 @@ Each directory records the inputs and preserves the outputs for a single study. 
 | SeedLM reproduction | [SeedLM report](seedlm-smollm2/README.md) |
 | Computational codebooks | [Study report](#computational-codebook-follow-up) and [raw outputs](codebooks-smollm2/) |
 | Generator synthesis | [Search report](generator-search-smollm2/README.md) |
+| Miniature computational codebooks | [Four-weight search](miniature-codebook/README.md), [scale and grammar follow-up](miniature-codebook-followup/README.md), [overlapping-window follow-up](trellis-followup/README.md) |
 | Generator perplexity | [Evaluation report and partial runs](generator-model-smollm2/README.md) |
 | Laptop model evaluation | [Completed synthesized and SeedLM runs, including 3-bpw synthesis](laptop-rtx3050/README.md) |
 

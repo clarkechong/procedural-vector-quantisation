@@ -1,0 +1,7 @@
+{
+  "codec": "five-bit windows, 2 new bits per weight, byte-aligned rows",
+  "map": "int8(120*state)",
+  "boundary": "open",
+  "scale": "per matrix, 8 training spans",
+  "note": "Smoke test only; shared scale included in each matrix payload"
+}

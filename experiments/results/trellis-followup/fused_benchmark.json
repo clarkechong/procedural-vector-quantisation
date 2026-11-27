@@ -1,0 +1,16 @@
+{
+  "gpu": "AMD Radeon Graphics",
+  "gpu_arch": "gfx942:sramecc+:xnack-",
+  "rows": 4096,
+  "weights_per_row": 1024,
+  "payload_bytes": 528384,
+  "payload_bpw": 1.0078125,
+  "milliseconds": 0.006694808973815669,
+  "decoded_weights_per_second": 626500922790.2555,
+  "dense_fp16_matvec_milliseconds": 0.014572774992686593,
+  "dense_fp16_weight_bytes": 8388608,
+  "max_abs_reference_difference": 1.1818930554241547e-06,
+  "reference_rows": 16,
+  "kernel": "Triton fused decode plus one dot product per row",
+  "note": "Isolated microbenchmark; excludes encoder, model execution, and activation traffic from other layers"
+}

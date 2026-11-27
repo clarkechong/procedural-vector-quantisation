@@ -1,0 +1,51 @@
+{
+  "grammar": {
+    "operations": [
+      "ADD",
+      "SUB",
+      "MUL",
+      "AND",
+      "OR",
+      "XOR",
+      "SHL",
+      "SHR"
+    ],
+    "constants": [
+      0,
+      1,
+      2,
+      3,
+      15,
+      255,
+      4,
+      7,
+      8,
+      16,
+      31,
+      127,
+      32768,
+      32640,
+      127,
+      15360,
+      15616
+    ],
+    "description": "Low 16 output bits read as BF16; no learned scale"
+  },
+  "coverage": {
+    "one_instruction_syntax": 733,
+    "one_instruction_valid_unique": 464,
+    "selected_prefixes": 48,
+    "second_instruction_choices_per_prefix": 194,
+    "two_instruction_syntactic_trials": 9312,
+    "two_instruction_valid_unique": 3008,
+    "full_calibration_reranked": 96
+  },
+  "winner": {
+    "program": "r0=SUB(0x3c00, s); r1=MUL(s, r0)",
+    "calibration_nmse": 0.8196202788001511,
+    "heldout_nmse": 0.8233730982712774,
+    "final_nmse": 0.832028068641513
+  },
+  "elapsed_seconds": 11.881541673999891,
+  "limits": "Two-step search is guided by selected prefixes and screened on 512 calibration tiles; no exhaustiveness claim."
+}
