@@ -16,7 +16,7 @@ def main():
         raise FileNotFoundError("clone pinned upstream SmoothQuant into /tmp/smoothquant-official")
     sys.path.insert(0,str(source))
     from smoothquant.smooth import smooth_lm
-    out=Path("experiments/results/reference/smoothquant-model-parity")
+    out=Path("results/e04-07-reference-optimization/reference/smoothquant-model-parity")
     out.mkdir(parents=True,exist_ok=True)
     device="cuda" if torch.cuda.is_available() else "cpu"
     assets=Path("data/smollm2")

@@ -212,6 +212,6 @@ if __name__ == "__main__":
     parser.add_argument("--seeds", nargs="+", type=int, default=[11, 17, 23])
     parser.add_argument("--epochs", type=int, default=5)
     parser.add_argument("--methods", nargs="*")
-    parser.add_argument("--out", default="experiments/results/procedural_training/low_rate_qat")
+    parser.add_argument("--out", default="results/e08-12-low-rate-training/procedural-training/low-rate-qat")
     parser.add_argument("--require-gpu", action="store_true")
     run(parser.parse_args())

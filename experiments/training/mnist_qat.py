@@ -15,7 +15,7 @@ import torch.nn.functional as F
 from experiments.training.tiny_oracle import codebooks
 
 
-OUT = Path("experiments/results/procedural_training/mnist_qat")
+OUT = Path("results/e08-12-low-rate-training/procedural-training/mnist-qat")
 
 
 def read_idx(path):

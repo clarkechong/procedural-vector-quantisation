@@ -73,7 +73,7 @@ def main(a):
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('--source', default='/tmp/faiss-emeans')
-    p.add_argument('--output', default='experiments/results/experiments-22-26/reference_emeans.json')
+    p.add_argument('--output', default='results/e22-26-emeans-prosparse/reference_emeans.json')
     p.add_argument('--n', type=int, default=4096)
     p.add_argument('--test-n', type=int, default=1024)
     p.add_argument('--d', type=int, default=32)

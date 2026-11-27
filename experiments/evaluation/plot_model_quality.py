@@ -45,7 +45,7 @@ def measurements(laptop, mi300x=None):
                                      bits_per_weight=float(row["projection_bpw"]),
                                      weight_nmse=float(row["weight_nmse"]), perplexity=float(row["perplexity"]),
                                      run=run_name, source=str(source.relative_to(ROOT))))
-    source = ROOT / "experiments/results/codebooks-smollm2/model_quality.csv"
+    source = ROOT / "results/s03-computational-codebooks/model_quality.csv"
     historical = {
         "int4_group64": ("Group-64 INT4 4.25b", "Scalar", "D"),
         "indexed_refine": ("SeedLM indexed refinement 4b", "SeedLM", "D"),
@@ -152,7 +152,7 @@ def plot(rows, out):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--runs", type=Path, default=ROOT / "runs/laptop-rtx3050")
-    parser.add_argument("--mi300x", type=Path, default=ROOT / "experiments/results/mi300x-3p5")
+    parser.add_argument("--mi300x", type=Path, default=ROOT / "results/s06-hardware-evaluation/mi300x-3p5")
     parser.add_argument("--out", type=Path, default=ROOT / "runs/laptop-rtx3050/plots")
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)

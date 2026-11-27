@@ -12,7 +12,7 @@ from experiments.training.tiny_oracle import codebooks
 
 
 def main():
-    out = Path("experiments/results/procedural_training/direct_step_sweep")
+    out = Path("results/e08-12-low-rate-training/procedural-training/direct-step-sweep")
     out.mkdir(parents=True, exist_ok=True)
     images, labels, _, _, train_ids, _, manifest = data_split()
     (out/"manifest.json").write_text(json.dumps(manifest, indent=2)+"\n")

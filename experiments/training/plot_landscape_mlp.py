@@ -19,7 +19,7 @@ def read(path):
 
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument("--result",type=Path,default=Path("experiments/results/experiments-13-18/landscape_mlp"))
+    parser.add_argument("--result",type=Path,default=Path("results/e13-18-activation-landscape/landscape-mlp"))
     args=parser.parse_args()
     root=args.result
     final_epoch=json.loads((root/"config.json").read_text())["epochs"]

@@ -18,8 +18,8 @@ def nearest_per_tile(book, targets):
 
 
 def main():
-    previous = Path("experiments/results/miniature-codebook")
-    out = Path("experiments/results/miniature-codebook-followup")
+    previous = Path("results/e01-miniature-codebook")
+    out = Path("results/e02-codebook-followup")
     summary = json.loads((out / "summary.json").read_text())
     guided = json.loads((out / "guided.json").read_text())
     original = json.loads((previous / "summary.json").read_text())

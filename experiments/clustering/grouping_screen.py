@@ -161,5 +161,5 @@ if __name__ == '__main__':
     p.add_argument('--groups', nargs='+', type=int, default=[8, 16])
     p.add_argument('--blocks', nargs='+', type=int, default=[16, 32])
     p.add_argument('--seed', type=int, default=22)
-    p.add_argument('--output', default='experiments/results/experiments-22-26')
+    p.add_argument('--output', default='results/e22-26-emeans-prosparse')
     run(p.parse_args())

@@ -62,7 +62,7 @@ def main():
     parser.add_argument("--layer",type=int,default=11)
     parser.add_argument("--projection",choices=list(PROJECTIONS),default="down_proj")
     parser.add_argument("--out",type=Path,
-                        default=Path("experiments/results/experiments-13-18/factorial_ptq"))
+                        default=Path("results/e13-18-activation-landscape/factorial-ptq"))
     args=parser.parse_args()
     args.out.mkdir(parents=True,exist_ok=True)
     torch.set_num_threads(4)

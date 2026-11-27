@@ -14,7 +14,7 @@ from reference_emeans import load_official
 def main():
     torch.set_num_threads(8)
     Emeans = load_official(Path('/tmp/faiss-emeans'))
-    out = Path('experiments/results/experiments-22-26/emeans_masks.csv')
+    out = Path('results/e22-26-emeans-prosparse/emeans_masks.csv')
     rows = []
     for doc in (67, 68, 69, 72, 73):
         x = np.load(SOURCE / 'data/activations' / f'doc_{doc:04d}.npy')[:128]

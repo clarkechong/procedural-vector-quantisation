@@ -59,7 +59,7 @@ def main():
         result['methods'][name]=dict(seconds=seconds,test_nmse=mse/float((test**2).mean()*d),
                                      test_nmse_fp16_table=quant_mse/float((test**2).mean()*d),
                                      occupied_test_codes=int(np.unique(labels).size))
-    out=Path('experiments/results/experiments-22-26/vq_diagnostic.json')
+    out=Path('results/e22-26-emeans-prosparse/vq_diagnostic.json')
     out.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result['methods']))
 

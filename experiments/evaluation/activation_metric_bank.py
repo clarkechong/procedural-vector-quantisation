@@ -34,7 +34,7 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--layers",type=int,nargs="+",default=list(LAYERS))
     parser.add_argument("--out",type=Path,
-                        default=Path("experiments/results/experiments-13-18/activation_metric_bank"))
+                        default=Path("results/e13-18-activation-landscape/activation-metric-bank"))
     args=parser.parse_args()
     torch.set_num_threads(4)
     checkpoint=Path("data/smollm2-135m.safetensors")

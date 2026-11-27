@@ -92,7 +92,7 @@ def unpack_path(payload,length,state_bits=16,stride=2):
     return path
 
 
-def run(samples=256, out=Path("experiments/results/reference/qtip-gaussian-tailbite"),
+def run(samples=256, out=Path("results/e04-07-reference-optimization/reference/qtip-gaussian-tailbite"),
         normalize=False, names=("1mad", "3inst")):
     out.mkdir(parents=True, exist_ok=True)
     rng = np.random.default_rng(20261127)

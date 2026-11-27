@@ -44,7 +44,7 @@ def quantize_blocks(matrix,H,mapping,scale,compensate):
     return result,b"".join(payload)
 
 
-def run(out=Path("experiments/results/reference/qtip-submatrix-ablation")):
+def run(out=Path("results/e04-07-reference-optimization/reference/qtip-submatrix-ablation")):
     out.mkdir(parents=True,exist_ok=True)
     torch.set_num_threads(4)
     device=torch.device("cuda" if torch.cuda.is_available() else "cpu")

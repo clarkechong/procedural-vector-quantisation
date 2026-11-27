@@ -172,6 +172,6 @@ if __name__ == "__main__":
     parser.add_argument("--width", type=int, default=4)
     parser.add_argument("--method", choices=["discrete_jacobian", "boolean_degree2", "bernoulli_exact"],
                         default="discrete_jacobian")
-    parser.add_argument("--out", default="experiments/results/procedural_training/latent_qat")
+    parser.add_argument("--out", default="results/e08-12-low-rate-training/procedural-training/latent-qat")
     parser.add_argument("--require-gpu", action="store_true")
     run(parser.parse_args())

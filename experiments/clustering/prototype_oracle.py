@@ -75,7 +75,7 @@ def main(q):
                 fixed_output_nmse_mean=float(fixed_error.mean()),
                 oracle_output_nmse_p95=float(torch.quantile(oracle,.95)),
                 topq_output_nmse_p95=float(torch.quantile(top_error,.95)))
-    out=Path(f'experiments/results/experiments-22-26/prototype_oracle_q{q}.json')
+    out=Path(f'results/e22-26-emeans-prosparse/prototype-oracle-q{q}.json')
     out.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result))
 

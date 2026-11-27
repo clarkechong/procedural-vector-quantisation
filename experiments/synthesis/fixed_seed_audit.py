@@ -8,7 +8,7 @@ import numpy as np
 from experiments.synthesis.trellis import signed_byte
 
 
-def audit(out=Path("experiments/results/experiments-13-18/fixed_seed_audit.csv")):
+def audit(out=Path("results/e13-18-activation-landscape/fixed_seed_audit.csv")):
     out.parent.mkdir(parents=True, exist_ok=True)
     seed = np.arange(256, dtype=np.int64)[:, None]
     rows = []

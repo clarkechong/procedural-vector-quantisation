@@ -126,7 +126,7 @@ if __name__ == "__main__":
     parser.add_argument("--check", type=int, default=8)
     parser.add_argument("--normalize", action="store_true")
     parser.add_argument("--require-gpu", action="store_true")
-    parser.add_argument("--out", type=Path, default=Path("experiments/results/experiments-19-21/qtip_batched_1mad.json"))
+    parser.add_argument("--out", type=Path, default=Path("results/e19-21-qtip-training/qtip_batched_1mad.json"))
     arguments = parser.parse_args()
     if arguments.check > arguments.batch:
         parser.error("--check cannot exceed --batch")

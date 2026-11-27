@@ -13,7 +13,7 @@ from experiments.evaluation.seedlm_model import load_model, perplexity, token_id
 
 
 def main():
-    out = Path("experiments/results/reference/identity")
+    out = Path("results/e04-07-reference-optimization/reference/identity")
     out.mkdir(parents=True, exist_ok=True)
     assets = Path("data/smollm2")
     model = load_model(Path("data/smollm2-135m.safetensors"), assets, torch.bfloat16)

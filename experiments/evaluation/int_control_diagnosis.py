@@ -46,7 +46,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkpoint", type=Path, default=Path("data/smollm2-135m.safetensors"))
     parser.add_argument("--out", type=Path,
-                        default=Path("experiments/results/experiments-13-18/int8_diagnosis"))
+                        default=Path("results/e13-18-activation-landscape/int8-diagnosis"))
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
     weights = Weights(args.checkpoint)

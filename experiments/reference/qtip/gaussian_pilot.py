@@ -12,7 +12,7 @@ from experiments.synthesis.trellis import encode
 
 
 def main():
-    out = Path("experiments/results/reference/qtip-gaussian-pilot")
+    out = Path("results/e04-07-reference-optimization/reference/qtip-gaussian-pilot")
     out.mkdir(parents=True, exist_ok=True)
     rng = np.random.default_rng(20261127)
     samples = rng.standard_normal((256, 256))

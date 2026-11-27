@@ -25,7 +25,7 @@ def upstream_hadamard():
     return namespace["matmul_hadU"]
 
 
-def run(out=Path("experiments/results/reference/qtip-smollm-components")):
+def run(out=Path("results/e04-07-reference-optimization/reference/qtip-smollm-components")):
     out.mkdir(parents=True,exist_ok=True)
     torch.set_num_threads(4)
     device=torch.device("cuda" if torch.cuda.is_available() else "cpu")

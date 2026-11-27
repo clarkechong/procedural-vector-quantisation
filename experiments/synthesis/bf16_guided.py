@@ -20,8 +20,8 @@ CONSTANTS = miniature.CONSTANTS + EXTRA_CONSTANTS
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkpoint", default="data/smollm2-135m.safetensors")
-    parser.add_argument("--previous", default="experiments/results/miniature-codebook")
-    parser.add_argument("--followup", default="experiments/results/miniature-codebook-followup")
+    parser.add_argument("--previous", default="results/e01-miniature-codebook")
+    parser.add_argument("--followup", default="results/e02-codebook-followup")
     parser.add_argument("--device", default="cuda")
     args = parser.parse_args()
     start = time.monotonic()

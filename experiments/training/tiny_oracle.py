@@ -10,7 +10,7 @@ import numpy as np
 from experiments.synthesis.trellis import signed_byte
 
 
-OUT = Path("experiments/results/procedural_training/tiny_oracle")
+OUT = Path("results/e08-12-low-rate-training/procedural-training/tiny-oracle")
 
 
 def codebooks():

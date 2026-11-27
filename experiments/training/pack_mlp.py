@@ -84,7 +84,7 @@ def unpack(payload):
 
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument("--result",type=Path,default=Path("experiments/results/experiments-13-18/landscape_mlp"))
+    parser.add_argument("--result",type=Path,default=Path("results/e13-18-activation-landscape/landscape-mlp"))
     args=parser.parse_args()
     result=args.result
     config=json.loads((result/"config.json").read_text())

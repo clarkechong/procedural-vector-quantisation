@@ -15,7 +15,7 @@ from experiments.training.mnist_qat import MLP, data_split
 
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument("--result",type=Path,default=Path("experiments/results/experiments-13-18/landscape_mlp"))
+    parser.add_argument("--result",type=Path,default=Path("results/e13-18-activation-landscape/landscape-mlp"))
     args=parser.parse_args()
     torch.set_num_threads(4)
     source = args.result

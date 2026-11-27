@@ -50,7 +50,7 @@ def main():
     parser.add_argument("--checkpoint", type=Path, default=Path("data/smollm2-135m.safetensors"))
     parser.add_argument("--data", type=Path, default=Path("data/smollm2"))
     parser.add_argument("--out", type=Path,
-                        default=Path("experiments/results/trellis-followup/model-smoke"))
+                        default=Path("results/e03-trellis/model-smoke"))
     parser.add_argument("--tokens", type=int, default=128)
     parser.add_argument("--context", type=int, default=128)
     parser.add_argument("--batch", type=int, default=1)

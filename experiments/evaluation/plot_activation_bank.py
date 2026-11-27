@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    root=Path("experiments/results/experiments-13-18")
+    root=Path("results/e13-18-activation-landscape")
     rows=[]
     for filename in ("activation_metric_bank/metrics.csv","activation_metric_layer11/metrics.csv"):
         with (root/filename).open() as handle:

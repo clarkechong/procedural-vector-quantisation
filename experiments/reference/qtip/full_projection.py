@@ -138,5 +138,5 @@ if __name__ == "__main__":
     parser.add_argument("--ldlq", action="store_true")
     parser.add_argument("--normalize", action="store_true")
     parser.add_argument("--require-gpu", action="store_true")
-    parser.add_argument("--out", type=Path, default=Path("experiments/results/experiments-19-21/qtip_full_qproj.json"))
+    parser.add_argument("--out", type=Path, default=Path("results/e19-21-qtip-training/qtip_full_qproj.json"))
     run(parser.parse_args())

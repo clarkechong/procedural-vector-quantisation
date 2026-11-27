@@ -225,6 +225,6 @@ if __name__=="__main__":
     p.add_argument("--train-stories",type=int,default=20000)
     p.add_argument("--valid-stories",type=int,default=1000)
     p.add_argument("--lr",type=float,default=0.0003)
-    p.add_argument("--out",default="experiments/results/procedural_training/tinystories_transformer")
+    p.add_argument("--out",default="results/e08-12-low-rate-training/procedural-training/tinystories-transformer")
     p.add_argument("--require-gpu",action="store_true")
     run(p.parse_args())

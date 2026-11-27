@@ -143,6 +143,6 @@ if __name__ == "__main__":
     parser.add_argument("--oracle-count",type=int,default=64)
     parser.add_argument("--epochs",type=int,default=10)
     parser.add_argument("--noise",type=float,default=0.25)
-    parser.add_argument("--out",default="experiments/results/learned_optimizer/inverse_scaling")
+    parser.add_argument("--out",default="results/e04-07-reference-optimization/learned-optimizer/inverse-scaling")
     parser.add_argument("--require-gpu",action="store_true")
     run(parser.parse_args())

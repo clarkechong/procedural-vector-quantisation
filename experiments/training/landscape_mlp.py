@@ -118,7 +118,7 @@ def main():
     parser.add_argument("--seeds", type=int, nargs="+", default=[11, 17, 23])
     parser.add_argument("--epochs", type=int, default=12)
     parser.add_argument("--out", type=Path,
-                        default=Path("experiments/results/experiments-13-18/landscape_mlp"))
+                        default=Path("results/e13-18-activation-landscape/landscape-mlp"))
     args = parser.parse_args()
     torch.set_num_threads(4)
     if not torch.cuda.is_available() or not torch.version.hip:

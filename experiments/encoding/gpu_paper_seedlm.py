@@ -81,7 +81,7 @@ def main():
     parser.add_argument("--seed-tile", type=int, default=1024)
     parser.add_argument("--block-tile", type=int, default=32)
     parser.add_argument("--out", type=Path,
-                        default=Path("experiments/results/experiments-13-18/seedlm_gpu_pilot"))
+                        default=Path("results/e13-18-activation-landscape/seedlm-gpu-pilot"))
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
     config = PUBLISHED[0 if args.bits == 3 else 1]

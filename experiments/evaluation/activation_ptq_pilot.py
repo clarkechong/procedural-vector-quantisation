@@ -14,7 +14,7 @@ from experiments.synthesis.weighted_trellis import encode, refit_scale
 from tokenizers import Tokenizer
 
 
-OUT = Path("experiments/results/activation_ptq/pilot")
+OUT = Path("results/e04-07-reference-optimization/activation-ptq/pilot")
 
 
 def quantize(matrix, metric, mapping, scale):

@@ -36,7 +36,7 @@ def main():
     parser.add_argument("--rows", type=int, default=4096)
     parser.add_argument("--length", type=int, default=1024)
     parser.add_argument("--out", type=Path,
-                        default=Path("experiments/results/trellis-followup/fused_benchmark.json"))
+                        default=Path("results/e03-trellis/fused_benchmark.json"))
     args = parser.parse_args()
     if not torch.cuda.is_available():
         raise ValueError("A ROCm/CUDA GPU is required")

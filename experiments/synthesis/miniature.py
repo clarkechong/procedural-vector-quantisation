@@ -216,7 +216,7 @@ def controls(cal, hold, scale, device):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkpoint", default="data/smollm2-135m.safetensors")
-    parser.add_argument("--out", default="experiments/results/miniature-codebook")
+    parser.add_argument("--out", default="results/e01-miniature-codebook")
     parser.add_argument("--device", default="cuda")
     args = parser.parse_args()
     out = Path(args.out)

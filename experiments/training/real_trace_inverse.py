@@ -14,7 +14,7 @@ from experiments.training.mnist_qat import MLP, data_split
 from experiments.training.tiny_oracle import codebooks
 
 
-OUT=Path("experiments/results/learned_optimizer/real_trace")
+OUT=Path("results/e04-07-reference-optimization/learned-optimizer/real-trace")
 
 
 def main():
@@ -36,7 +36,7 @@ def main():
     optimizer=torch.optim.Adam(model.parameters(),lr=1e-3)
     inverse=torch.nn.Sequential(torch.nn.Linear(4,128),torch.nn.ReLU(),
         torch.nn.Linear(128,128),torch.nn.ReLU(),torch.nn.Linear(128,256)).to(device)
-    inverse.load_state_dict(torch.load("experiments/results/learned_optimizer/inverse_pilot/model.pt",
+    inverse.load_state_dict(torch.load("results/e04-07-reference-optimization/learned-optimizer/inverse-pilot/model.pt",
         map_location=device,weights_only=True))
     inverse.eval()
     rng=np.random.default_rng(411)
@@ -101,7 +101,7 @@ def main():
     (OUT/"config.json").write_text(json.dumps(dict(trace_seed=41,steps=25,tiles_per_layer=100,
         target_step_size=10,training_optimizer="shadow Adam 1e-3",device=device,
         elapsed_seconds=time.perf_counter()-start,
-        inverse_source="experiments/results/learned_optimizer/inverse_pilot/model.pt"),indent=2)+"\n")
+        inverse_source="results/e04-07-reference-optimization/learned-optimizer/inverse-pilot/model.pt"),indent=2)+"\n")
     print(json.dumps(metrics,indent=2))
 
 

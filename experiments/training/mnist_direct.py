@@ -12,7 +12,7 @@ from experiments.training.mnist_qat import MLP, data_split, evaluate
 from experiments.training.tiny_oracle import codebooks
 
 
-OUT = Path("experiments/results/procedural_training/mnist_direct")
+OUT = Path("results/e08-12-low-rate-training/procedural-training/mnist-direct")
 
 
 def main(epochs=20, seeds=(11,17,23), learning_rate=.1,

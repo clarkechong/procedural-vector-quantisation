@@ -8,7 +8,7 @@ import numpy as np
 from experiments.training.low_rate_qat import make_book
 
 
-def audit(out=Path("experiments/results/experiments-19-21/training_map_audit.csv")):
+def audit(out=Path("results/e19-21-qtip-training/training_map_audit.csv")):
     rows = []
     for width in (4, 8, 16, 32):
         for family in ("mul120", "qtip_1mad", "hash32", "random_vq"):

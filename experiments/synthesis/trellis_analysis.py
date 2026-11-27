@@ -27,8 +27,8 @@ def scalar_control(calibration, test, levels):
 
 
 def main():
-    prior = Path("experiments/results/miniature-codebook")
-    followup = Path("experiments/results/miniature-codebook-followup")
+    prior = Path("results/e01-miniature-codebook")
+    followup = Path("results/e02-codebook-followup")
     old = json.loads((prior / "sample_manifest.json").read_text())
     final = json.loads((followup / "final_manifest.json").read_text())
     samples, manifest = sample_rows("data/smollm2-135m.safetensors", (old, final))

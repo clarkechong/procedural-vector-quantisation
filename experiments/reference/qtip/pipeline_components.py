@@ -41,7 +41,7 @@ def block_ldl(H, block):
     return result, torch.block_diag(*blocks)
 
 
-def run(out=Path("experiments/results/reference/qtip-pipeline-components")):
+def run(out=Path("results/e04-07-reference-optimization/reference/qtip-pipeline-components")):
     out.mkdir(parents=True,exist_ok=True)
     generator=torch.Generator().manual_seed(20261127)
     x=torch.randn((512,64),generator=generator,dtype=torch.float64)

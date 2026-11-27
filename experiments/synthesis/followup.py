@@ -17,7 +17,7 @@ from experiments.manifests.weights import PROJECTIONS, Weights
 from experiments.synthesis import miniature
 
 
-OUT = Path("experiments/results/miniature-codebook-followup")
+OUT = Path("results/e02-codebook-followup")
 EXTRA_CONSTANTS = (4, 7, 8, 16, 31, 0x7f, 0x8000, 0x7f80, 0x007f, 0x3c00, 0x3d00)
 
 
@@ -121,7 +121,7 @@ def target_geometry(cal, hold):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkpoint", default="data/smollm2-135m.safetensors")
-    parser.add_argument("--previous", default="experiments/results/miniature-codebook")
+    parser.add_argument("--previous", default="results/e01-miniature-codebook")
     parser.add_argument("--out", default=str(OUT))
     parser.add_argument("--device", default="cuda")
     args = parser.parse_args()

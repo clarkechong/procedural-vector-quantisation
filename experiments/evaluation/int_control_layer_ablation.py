@@ -22,7 +22,7 @@ def main():
     torch.set_num_threads(4)
     checkpoint = Path("data/smollm2-135m.safetensors")
     assets = Path("data/smollm2")
-    out = Path("experiments/results/experiments-13-18/int8_layer_ablation")
+    out = Path("results/e13-18-activation-landscape/int8-layer-ablation")
     out.mkdir(parents=True, exist_ok=True)
     model = load_model(checkpoint, assets, torch.float32).to("cuda")
     tokens = token_ids(assets, "test", Tokenizer.from_file(str(assets / "tokenizer.json")))[:256]

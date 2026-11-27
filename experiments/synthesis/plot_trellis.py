@@ -8,7 +8,7 @@ import numpy as np
 
 
 def main():
-    out = Path("experiments/results/trellis-followup")
+    out = Path("results/e03-trellis")
     data = json.loads((out / "results.json").read_text())
     records = data["rate_distortion"]
     controls = data["matched_scalar_controls"]

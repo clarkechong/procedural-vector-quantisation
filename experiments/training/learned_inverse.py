@@ -11,7 +11,7 @@ import torch
 from experiments.training.tiny_oracle import codebooks
 
 
-OUT = Path("experiments/results/learned_optimizer/inverse_pilot")
+OUT = Path("results/e04-07-reference-optimization/learned-optimizer/inverse-pilot")
 
 
 def samples(book, count, seed):

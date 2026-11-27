@@ -22,7 +22,7 @@ from experiments.synthesis.trellis import (decode_bits, dependency_graph, encode
 
 LENGTHS = (4, 8, 16, 32, 64, 128, 256, 1024)
 COUNTS = (64, 64, 64, 48, 32, 24, 16, 8)
-OUT = Path("experiments/results/trellis-followup")
+OUT = Path("results/e03-trellis")
 
 
 def sample_rows(checkpoint, prior_manifests, lengths=LENGTHS, counts=COUNTS):
@@ -136,8 +136,8 @@ def main():
     started = time.monotonic()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
-    prior = Path("experiments/results/miniature-codebook")
-    followup = Path("experiments/results/miniature-codebook-followup")
+    prior = Path("results/e01-miniature-codebook")
+    followup = Path("results/e02-codebook-followup")
     guided = json.loads((followup / "guided.json").read_text())
     old_manifest = json.loads((prior / "sample_manifest.json").read_text())
     final_manifest = json.loads((followup / "final_manifest.json").read_text())

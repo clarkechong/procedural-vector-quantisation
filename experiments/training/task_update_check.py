@@ -12,7 +12,7 @@ from experiments.training.tiny_oracle import codebooks
 
 
 def main():
-    out=Path("experiments/results/learned_optimizer/task_update")
+    out=Path("results/e04-07-reference-optimization/learned-optimizer/task-update")
     out.mkdir(parents=True,exist_ok=True)
     images,labels,_,_,train_ids,_,manifest=data_split()
     (out/"manifest.json").write_text(json.dumps(dict(**manifest,seed=41,
@@ -30,7 +30,7 @@ def main():
     model.load_state_dict(initial.state_dict(),strict=False)
     inverse=torch.nn.Sequential(torch.nn.Linear(4,128),torch.nn.ReLU(),
         torch.nn.Linear(128,128),torch.nn.ReLU(),torch.nn.Linear(128,256)).to(device)
-    inverse.load_state_dict(torch.load("experiments/results/learned_optimizer/inverse_pilot/model.pt",
+    inverse.load_state_dict(torch.load("results/e04-07-reference-optimization/learned-optimizer/inverse-pilot/model.pt",
         map_location=device,weights_only=True));inverse.eval()
     train_loss=F.cross_entropy(model(x[train]),y[train]);train_loss.backward()
     with torch.no_grad():

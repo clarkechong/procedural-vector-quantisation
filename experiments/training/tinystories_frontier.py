@@ -149,5 +149,5 @@ if __name__ == "__main__":
     parser.add_argument("--confirm-stories", type=int, default=1000)
     parser.add_argument("--lr", type=float, default=.0003)
     parser.add_argument("--require-gpu", action="store_true")
-    parser.add_argument("--out", type=Path, default=Path("experiments/results/experiments-19-21/tinystories_frontier"))
+    parser.add_argument("--out", type=Path, default=Path("results/e19-21-qtip-training/tinystories-frontier"))
     run(parser.parse_args())
