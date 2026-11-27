@@ -1,5 +1,11 @@
 # Llama 2 7B SeedLM reference run
 
+The base checkpoint is now accessible and the dense, SmoothQuant, released
+QTIP HYB, and group-64 INT4 rows have been evaluated on MI300X. See the
+[27 November follow-up](../results/llama2-reference-followup/report.md).
+The full SeedLM 3/4-bpw model runs below remain pending because the exact
+CPU seed search takes several hours on all 6.48 billion projection weights.
+
 SmolLM2-135M is the quick regression model for codecs and same-checkpoint quality comparisons. Llama 2 7B is the reference model for checking the published SeedLM results. Table 2 reports WikiText-2 perplexity over 166 windows of 2,048 tokens. [SeedLM Table 2](https://arxiv.org/html/2410.10714v2#S4.SS1)
 
 | Llama 2 7B method | Published bits per weight | Published perplexity |

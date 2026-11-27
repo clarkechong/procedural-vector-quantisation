@@ -1,0 +1,13 @@
+{
+  "nll": 1.7682906606393523,
+  "perplexity": 5.860826652616745,
+  "scored_tokens": 339885,
+  "context": 4096,
+  "windows": 83,
+  "decoded_layers": 32,
+  "checkpoint_sha256": "aa9703da83b132db87261881a95df73e4d3a747798c34ddb391ff60792d00e0e",
+  "base_index_sha256": "217d527037a95cd5cd30384afb425987824373b94cc7206beb48ec0c9499c98f",
+  "test_sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+  "upstream_commit": "e90c6688c8dfae326a3a81b5eb032db7c6680ec0",
+  "note": "Released HYB checkpoint, pinned PyTorch decompressor and Hadamard with local dense forward adapter; no native QTIP kernel"
+}

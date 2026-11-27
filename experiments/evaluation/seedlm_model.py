@@ -31,11 +31,11 @@ def submodules(model, layers):
             yield layer, name, getattr(getattr(model.model.layers[layer], group), name)
 
 
-def calibration(model, tokens, length, device):
+def calibration(model, tokens, length, device, layers=None):
     captured = {}
     handles = []
     layer_count = model.config.num_hidden_layers
-    layers = sorted({0, layer_count // 2, layer_count - 1})
+    layers = sorted({0, layer_count // 2, layer_count - 1} if layers is None else set(layers))
     for layer, name, module in submodules(model, layers):
         def record(_, args, key=(layer, name)):
             values = args[0].detach().to(device="cpu", dtype=torch.float32)
@@ -97,6 +97,18 @@ def load_model(checkpoint, assets, dtype):
 def inference_weights(model, device):
     if device.type == "cpu":
         yield
+        return
+    # Keep the model resident when the accelerator has enough room. Repeatedly
+    # streaming a 7B checkpoint for every WikiText window dominates inference
+    # on a 192 GiB MI300X and is unnecessary for this evaluation.
+    weight_bytes = sum(p.numel() * p.element_size() for p in model.parameters())
+    free_bytes, _ = torch.cuda.mem_get_info(device)
+    if free_bytes > 2 * weight_bytes + 4 * 1024**3:
+        model.to(device)
+        try:
+            yield
+        finally:
+            model.to("cpu")
         return
     from accelerate import cpu_offload
     from accelerate.hooks import remove_hook_from_submodules

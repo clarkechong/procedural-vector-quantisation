@@ -1,0 +1,15 @@
+{
+  "method": "original",
+  "ppl": 5.473298009749657,
+  "nll": 1.6998813615746264,
+  "scored_tokens": 339802,
+  "windows": 166,
+  "context": 2048,
+  "dtype": "bfloat16",
+  "setup_seconds": 12.478043058000367,
+  "upstream_commit": "c61476d728e42ae0d8a35e7e78494edcac3237b5",
+  "checkpoint_index_sha256": "217d527037a95cd5cd30384afb425987824373b94cc7206beb48ec0c9499c98f",
+  "test_sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+  "scale_sha256": null,
+  "note": "Pinned upstream SmoothQuant transforms and fake quantizer; local equivalent evaluator with one BOS"
+}
