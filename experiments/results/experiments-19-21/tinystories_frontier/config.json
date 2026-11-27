@@ -1,0 +1,39 @@
+{
+  "seeds": [
+    11,
+    17,
+    23
+  ],
+  "methods": [
+    "dense",
+    "scalar4",
+    "scalar2",
+    "binary",
+    "procedural2",
+    "procedural1",
+    "procedural0.5"
+  ],
+  "finetune_methods": [
+    "scalar2",
+    "procedural2",
+    "binary",
+    "procedural1"
+  ],
+  "steps": 6400,
+  "finetune_start": 4800,
+  "batch_size": 16,
+  "lr": 0.0003,
+  "train_stories": 20000,
+  "validation_stories": 1000,
+  "confirmation_stories": 1000,
+  "train_ids_sha256": "175080077e72a76ffd544cdd40e6b583922e843d409059add22967efb2956563",
+  "validation_ids_sha256": "69ad8ffc9d0d6edc12da50b06e47709c4eb6adf92048025bcdddaf930ebcbcc3",
+  "confirmation_ids_sha256": "d24f4e49f6dda3d766989fc72ea01ebf0c3448f4bcb3675af9d715612b14cb2b",
+  "disjoint_validation_confirmation": true,
+  "train_sequences": 70034,
+  "validation_sequences": 3486,
+  "confirmation_sequences": 3412,
+  "architecture": "4 layers, 128 hidden, 4 heads, FFN 512, byte tokenizer, context 256",
+  "device": "cuda",
+  "note": "Same initial tensors and sampled sequence IDs within each seed. Dense-to-QAT uses a fresh AdamW optimizer at finetune_start. Public TinyStories validation split is exposed, not blind."
+}

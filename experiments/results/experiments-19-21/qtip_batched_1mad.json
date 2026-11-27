@@ -1,0 +1,19 @@
+{
+  "device": "cuda",
+  "gpu": "AMD Radeon Graphics",
+  "map": "1mad",
+  "batch": 8,
+  "length": 256,
+  "state_bits": 16,
+  "stride": 2,
+  "normalized": false,
+  "seed": 20261127,
+  "elapsed_s": 0.17624987399904057,
+  "tiles_per_second": 45.390103371328074,
+  "exact_path_mismatches": 0,
+  "checked_tiles": 8,
+  "max_excess_sse": 0.0,
+  "peak_allocated_bytes": 45900800,
+  "source_commit": "e90c6688c8dfae326a3a81b5eb032db7c6680ec0",
+  "note": "Independent CPU parity; not direct upstream CUDA kernel parity or full projection"
+}

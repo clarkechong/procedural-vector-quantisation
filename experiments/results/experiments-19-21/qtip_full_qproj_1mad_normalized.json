@@ -1,0 +1,31 @@
+{
+  "model": "SmolLM2-135M",
+  "layer": 15,
+  "projection": "q_proj",
+  "shape": [
+    576,
+    576
+  ],
+  "map": "1mad",
+  "normalized_map": true,
+  "rht": false,
+  "block_ldlq": true,
+  "calibration_tokens": 512,
+  "validation_tokens": 512,
+  "input_token_offsets": [
+    0,
+    1023
+  ],
+  "scale": 0.1943882703781128,
+  "regularization": 0.0010089085570370636,
+  "weight_nmse": 0.2126580713575358,
+  "heldout_output_nmse": 0.03924381295999069,
+  "payload_bytes": 82944,
+  "payload_bpw": 2.0,
+  "scale_bytes": 4,
+  "independent_decode_max_abs": 0.0,
+  "encode_s": 1.9586235999995552,
+  "tiles": 1296,
+  "tiles_per_second": 661.6891576310499,
+  "note": "Unrotated full projection BlockLDLQ ablation. Not native QTIP RHT or model PPL."
+}

@@ -1,0 +1,17 @@
+family,width,payload_bpw,structurally_zero_coordinates,constant_coordinates,distinct_coordinate_functions,unique_codewords,rank,min_coordinate_rms,max_coordinate_rms,map_source
+mul120,4,2.0,0,0,4,256,4,0.9999999932850242,0.9999999932850248,experiments.training.low_rate_qat.make_book
+qtip_1mad,4,2.0,0,0,4,256,4,0.9593844705500044,1.0379437335747992,experiments.training.low_rate_qat.make_book
+hash32,4,2.0,0,0,4,256,4,0.9515846093646694,1.0359772202023192,experiments.training.low_rate_qat.make_book
+random_vq,4,2.0,0,0,4,256,4,0.9427062571884259,1.0776220360976088,experiments.training.low_rate_qat.make_book
+mul120,8,1.0,0,0,8,256,8,0.9999999932850242,0.9999999932850256,experiments.training.low_rate_qat.make_book
+qtip_1mad,8,1.0,0,0,8,256,8,0.8670026854766621,1.1614921178495452,experiments.training.low_rate_qat.make_book
+hash32,8,1.0,0,0,8,256,8,0.9549907762853944,1.0406213379025344,experiments.training.low_rate_qat.make_book
+random_vq,8,1.0,0,0,8,256,8,0.9205718329479697,1.0507970625116205,experiments.training.low_rate_qat.make_book
+mul120,16,0.5,0,0,16,256,16,0.9999999932850242,0.9999999932850256,experiments.training.low_rate_qat.make_book
+qtip_1mad,16,0.5,0,0,16,256,16,0.8698887712897816,1.2979219240016289,experiments.training.low_rate_qat.make_book
+hash32,16,0.5,0,0,16,256,16,0.9418261055093173,1.0520041116034577,experiments.training.low_rate_qat.make_book
+random_vq,16,0.5,0,0,16,256,16,0.9207188574438006,1.060190460241919,experiments.training.low_rate_qat.make_book
+mul120,32,0.25,0,0,32,256,32,0.9999999932850242,0.9999999932850256,experiments.training.low_rate_qat.make_book
+qtip_1mad,32,0.25,0,0,32,256,32,0.8566041353400806,1.2314436391344146,experiments.training.low_rate_qat.make_book
+hash32,32,0.25,0,0,32,256,32,0.9449649582729938,1.0552505813014967,experiments.training.low_rate_qat.make_book
+random_vq,32,0.25,0,0,32,256,32,0.8651118571066229,1.0726068082579183,experiments.training.low_rate_qat.make_book
